@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAVROX — Provider-Prescribed ED Treatment</title>
+  <meta name="description" content="Board-certified physicians. Proven ED formulas. Discreet delivery to your door. Performaxx™ triple-agent sublingual tablet and Tadalafil Daily — prescription treatment for men 45+." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F4EE;
+      --bg2: #F0EBE2;
+      --black: #0F0E0D;
+      --text: #1C1917;
+      --muted: #6B6460;
+      --border: rgba(28,25,23,0.09);
+      --orange: #C94B1A;
+      --orange2: #E05E28;
+      --blue: #2A6496;
+      --nav-h: 60px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+    p { line-height: 1.65; }
+    a { text-decoration: none; color: inherit; }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 12px 24px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-orange {
+      background: var(--orange);
+      color: #fff;
+    }
+    .btn-orange:hover { background: var(--orange2); transform: translateY(-1px); }
+    .btn-ghost-white {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .btn-ghost-white:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.07); }
+    .btn-ghost-dark {
+      background: transparent;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-ghost-dark:hover { border-color: rgba(28,25,23,0.3); }
+    .btn-black {
+      background: var(--black);
+      color: #fff;
+      width: 100%;
+      justify-content: center;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      padding: 14px 24px;
+    }
+    .btn-black:hover { background: #2a2826; transform: translateY(-1px); }
+    .btn-white-solid {
+      background: #fff;
+      color: var(--black);
+      font-weight: 600;
+    }
+    .btn-white-solid:hover { background: #f0ebe2; transform: translateY(-1px); }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ===================== NAV ===================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(248,244,238,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 2.5rem;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .nav-logo img { height: 22px; display: block; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-actions .btn-ghost-dark {
+      padding: 9px 20px;
+      font-size: 0.85rem;
+    }
+    .nav-actions .btn-orange {
+      padding: 9px 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+
+    /* Mobile menu */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      background: rgba(248,244,238,0.97);
+      backdrop-filter: blur(16px);
+      padding: 1.5rem 2rem 2rem;
+      flex-direction: column;
+      gap: 0;
+      z-index: 99;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      padding: 0.85rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile .btn { margin-top: 1.25rem; width: 100%; justify-content: center; }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      background: var(--black);
+      height: 800px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -120px;
+      width: 180px;
+      height: 100%;
+      background: linear-gradient(to right, var(--black) 0%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      animation: hero-zoom 10s ease-in-out infinite alternate;
+    }
+    @keyframes hero-zoom {
+      from { transform: scale(1); }
+      to   { transform: scale(1.05); }
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(15,14,13,0.5) 0%, transparent 50%),
+                  linear-gradient(to top, rgba(15,14,13,0.4) 0%, transparent 40%);
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201,75,26,0.15);
+      border: 1px solid rgba(201,75,26,0.35);
+      color: #e07a56;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      width: fit-content;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .hero-h1 {
+      font-size: clamp(3rem, 5vw, 5.25rem);
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.05;
+      font-weight: 400;
+    }
+    .hero-h1 em {
+      font-style: italic;
+      color: #e8c9a0;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 440px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-stars {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2.5rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.875rem;
+    }
+    .stars-gold { color: #f5c842; letter-spacing: 2px; font-size: 1rem; }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .hero-ctas .btn-orange { padding: 14px 28px; font-size: 0.95rem; }
+    .hero-ctas .btn-ghost-white { padding: 14px 28px; font-size: 0.95rem; }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .hero-trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+      padding: 0 0.875rem 0 0;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      margin-right: 0.875rem;
+    }
+    .hero-trust-pill:last-child { border-right: none; margin-right: 0; }
+    .hero-trust-pill svg { opacity: 0.6; }
+
+    /* ===================== TRUST BAR ===================== */
+    .trust-bar {
+      background: var(--black);
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+    }
+    .trust-bar::before,
+    .trust-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .trust-bar::before {
+      left: 0;
+      background: linear-gradient(to right, var(--black), transparent);
+    }
+    .trust-bar::after {
+      right: 0;
+      background: linear-gradient(to left, var(--black), transparent);
+    }
+    .trust-track {
+      display: flex;
+      width: max-content;
+      animation: trust-scroll 24s linear infinite;
+    }
+    .trust-bar:hover .trust-track { animation-play-state: paused; }
+    @keyframes trust-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 1.1rem 2.8rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .trust-item svg { color: var(--orange); flex-shrink: 0; }
+
+    /* ===================== TREATMENTS ===================== */
+    .treatments {
+      background: var(--bg);
+      padding: 4.5rem 2.5rem;
+    }
+    .treatments-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1rem;
+    }
+    .section-heading {
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .section-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 3.5rem;
+      line-height: 1.7;
+    }
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 16px rgba(28,25,23,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(28,25,23,0.13);
+    }
+    .card-image {
+      aspect-ratio: 16/13;
+      overflow: hidden;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .card-image img { transform: scale(1.04); }
+    .card-body {
+      padding: 1.75rem;
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 1.1rem;
+    }
+    .card-tag-orange { background: rgba(201,75,26,0.1); color: var(--orange); }
+    .card-tag-blue { background: rgba(42,100,150,0.1); color: var(--blue); }
+    .card-name {
+      font-size: 1.85rem;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .card-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .card-benefits {
+      list-style: none;
+      margin-bottom: 1.75rem;
+    }
+    .card-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1rem;
+      color: var(--text);
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .card-benefits li:last-child { border-bottom: none; }
+    .check-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(201,75,26,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-icon-blue { background: rgba(42,100,150,0.1); }
+    .check-icon svg { color: var(--orange); }
+    .check-icon-blue svg { color: var(--blue); }
+    .card-price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .card-price span { font-family: 'Barlow', sans-serif; font-size: 0.8rem; color: var(--muted); }
+
+    /* ===================== LIFESTYLE SPLIT ===================== */
+    .lifestyle {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 800px;
+    }
+    .lifestyle-image {
+      overflow: hidden;
+      position: relative;
+    }
+    .lifestyle-image img {
+      width: 100%;
+      height: 140%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      will-change: transform;
+      transform: translateY(-15%);
+    }
+    .lifestyle-content {
+      padding: 3.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .lifestyle-content .section-label { color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+    .lifestyle-h2 {
+      font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .lifestyle-h2 em { font-style: italic; color: #e8c9a0; }
+    .lifestyle-body {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 2.5rem;
+    }
+    .stat-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+    .stat-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.5rem;
+      color: var(--orange2);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-desc {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+    }
+
+    /* ===================== HOW IT WORKS ===================== */
+    .how-it-works {
+      background: var(--bg2);
+      padding: 4.5rem 2.5rem;
+    }
+    .how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-center { text-align: center; }
+    .section-center .section-sub { margin-left: auto; margin-right: auto; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .step-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.25rem 2rem;
+    }
+    .step-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+      color: rgba(28,25,23,0.08);
+    }
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,75,26,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .step-icon svg { color: var(--orange); }
+    .step-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+    .step-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ===================== TESTIMONIALS ===================== */
+    .testimonials {
+      background: var(--bg);
+      padding: 4.5rem 2.5rem;
+    }
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .testimonials-carousel {
+      overflow: hidden;
+      margin-top: 3.5rem;
+      position: relative;
+    }
+    .testimonials-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .testimonial-card {
+      flex: 0 0 calc((100% - 4.5rem) / 4);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .testimonials-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 2.5rem;
+    }
+    .testimonials-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.3s, width 0.3s;
+    }
+    .testimonials-dot.active {
+      background: var(--orange);
+      width: 24px;
+      border-radius: 4px;
+    }
+    .testimonial-stars { color: #f5c842; letter-spacing: 2px; font-size: 1rem; margin-bottom: 1.1rem; }
+    .testimonial-quote {
+      font-size: 1.1rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testimonial-quote::before { content: '\201C'; }
+    .testimonial-quote::after { content: '\201D'; }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .testimonial-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ===================== BRAND STORY ===================== */
+    .brand-story {
+      background: var(--bg2);
+      padding: 4.5rem 2.5rem;
+    }
+    .brand-story-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 45% 55%;
+      gap: 5rem;
+      align-items: center;
+    }
+    .brand-content .section-label { margin-bottom: 1rem; }
+    .brand-h2 {
+      font-size: clamp(2rem, 3vw, 2.85rem);
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+    .brand-body {
+      font-size: 1.15rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--orange);
+      margin-top: 0.5rem;
+      transition: gap 0.2s;
+    }
+    .brand-link:hover { gap: 10px; }
+    .brand-images {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 1rem;
+      height: 460px;
+    }
+    .brand-img-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .brand-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .brand-img-wrap:hover img { transform: scale(1.04); }
+
+    /* ===================== CTA BANNER ===================== */
+    .cta-banner {
+      position: relative;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .cta-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(15,14,13,0.88) 0%, rgba(15,14,13,0.55) 50%, rgba(15,14,13,0.25) 100%);
+      z-index: 1;
+    }
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      padding: 4rem 5rem;
+      max-width: 640px;
+    }
+    .cta-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange2);
+      margin-bottom: 1.25rem;
+    }
+    .cta-h2 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+    .cta-h2 em { font-style: italic; color: #e8c9a0; }
+    .cta-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+      line-height: 1.65;
+    }
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .cta-disclaimer {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.03em;
+    }
+    .cta-disclaimer span { margin: 0 6px; opacity: 0.4; }
+
+    /* ===================== FAQ ===================== */
+    .faq-section {
+      background: var(--bg);
+      padding: 4.5rem 2.5rem;
+    }
+    .faq-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-inner .section-heading { margin-bottom: 3rem; }
+    .faq-list { display: block; }
+    .faq-item {
+      border-top: 1px solid var(--border);
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+    }
+    .faq-trigger-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.35rem;
+      color: var(--text);
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, background 0.2s;
+    }
+    .faq-icon svg { color: var(--muted); transition: color 0.2s; }
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-body-inner {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      padding-bottom: 1.5rem;
+    }
+
+    /* ===================== FOOTER ===================== */
+    .footer {
+      background: var(--black);
+      padding: 4rem 2.5rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 2rem;
+    }
+    .footer-brand img { height: 20px; display: block; margin-bottom: 1rem; }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+      max-width: 220px;
+    }
+    .footer-col h4 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.65rem; }
+    .footer-col ul li a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.25);
+    }
+    .footer-rx {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.05em;
+    }
+    .footer-rx span { margin: 0 8px; opacity: 0.4; }
+    .footer-legal {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.2);
+      line-height: 1.65;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-left {
+        padding: 4rem 2rem 3rem;
+        order: 2;
+      }
+      .hero-left::after { display: none; }
+      .hero-right {
+        order: 1;
+        height: 55vw;
+        min-height: 320px;
+      }
+      .trust-bar-inner {
+        flex-wrap: wrap;
+      }
+      .treatments-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .lifestyle {
+        grid-template-columns: 1fr;
+      }
+      .lifestyle-image {
+        height: 50vw;
+        min-height: 260px;
+      }
+      .lifestyle-image img {
+        height: 140%;
+        width: 100%;
+      }
+      .lifestyle-content {
+        padding: 3.5rem 2rem;
+      }
+      .stat-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .testimonial-card {
+        flex: 0 0 calc(100% - 1.5rem);
+      }
+      .brand-story-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .brand-images {
+        height: 420px;
+      }
+      .cta-content {
+        padding: 4rem 2rem;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links, .nav-actions .btn-ghost-dark { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav { padding: 0 1.25rem; }
+      .hero-left { padding: 3rem 1.25rem 2.5rem; }
+      .hero-h1 { font-size: 2.6rem; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .treatments { padding: 4rem 1.25rem; }
+      .how-it-works { padding: 4rem 1.25rem; }
+      .testimonials { padding: 4rem 1.25rem; }
+      .brand-story { padding: 4rem 1.25rem; }
+      .faq-section { padding: 4rem 1.25rem; }
+      .lifestyle-content { padding: 2.5rem 1.25rem; }
+      .stat-cards { grid-template-columns: 1fr; }
+      .cta-content { padding: 3rem 1.25rem; }
+      .cta-buttons { flex-direction: column; align-items: flex-start; }
+      .cta-buttons .btn { width: 100%; justify-content: center; }
+      .footer { padding: 3rem 1.25rem 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Mavrox home">
+        <img src="Logo/Mavrox-1.png" alt="MAVROX" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="performaxx.html">Performaxx</a></li>
+        <li><a href="tadalafil-daily.html">Tadalafil Daily</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost-dark">Sign In</a>
+        <a href="#treatments" class="btn btn-orange">Get Started</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <a href="performaxx.html">Performaxx</a>
+    <a href="tadalafil-daily.html">Tadalafil Daily</a>
+    <a href="#" class="btn btn-ghost-dark" style="margin-top:1.25rem;width:100%;justify-content:center;">Sign In</a>
+    <a href="#treatments" class="btn btn-orange" style="width:100%;justify-content:center;">Get Started</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-tag reveal">Provider-Prescribed ED Treatment</div>
+      <h1 class="hero-h1 reveal reveal-delay-1">When it matters… it works..<br /><em>One clear choice.</em></h1>
+      <p class="hero-sub reveal reveal-delay-2">Prescription ED treatments designed around your lifestyle, not a one-size-fits-all approach.</p>
+      <div class="hero-ctas reveal reveal-delay-3">
+        <a href="#treatments" class="btn btn-orange">Find My Treatment</a>
+        <a href="#how-it-works" class="btn btn-ghost-white">How It Works</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="Images/getty-images-Mky0hr8rYPs-unsplash.jpg" alt="Mature man, confident close-up portrait" loading="eager" />
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar" aria-hidden="true">
+    <div class="trust-track">
+      <!-- Set 1 -->
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Provider Prescribed
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        HIPAA Compliant
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Discreet Packaging
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        30-Min Onset
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Free Shipping
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+        US-Licensed Providers
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Compounded &amp; FDA-Registered
+      </div>
+      <!-- Set 2 — duplicate for seamless loop -->
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Provider Prescribed
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        HIPAA Compliant
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Discreet Packaging
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        30-Min Onset
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Free Shipping
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+        US-Licensed Providers
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Compounded &amp; FDA-Registered
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Takes 2 minutes
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TREATMENTS ===== -->
+  <section class="treatments" id="treatments">
+    <div class="treatments-inner">
+      <span class="section-label reveal">Our Treatments</span>
+      <h2 class="section-heading reveal reveal-delay-1">Choose your treatment</h2>
+      <p class="section-sub reveal reveal-delay-2">Both provider-prescribed. Both proven. Pick the one that fits your life.</p>
+      <div class="treatments-grid">
+
+        <!-- Card 1: Performaxx -->
+        <div class="product-card reveal reveal-delay-1">
+          <div class="card-image">
+            <img src="Images/andrej-lisakov-c8EWOq3wX5s-unsplash.jpg" alt="Performaxx — intimate couple in red light" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag card-tag-orange">Triple-Agent Formula</span>
+            <h3 class="card-name">Performaxx&#8482;</h3>
+            <p class="card-desc">For men who need more than the standard pill</p>
+            <ul class="card-benefits">
+              <li>
+                <span class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Targets arousal and blood flow for a more complete response
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Triple agent formula with Apomorphine, Tadalafil, and Vardenafil
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Fast acting sublingual designed for use before intimacy
+              </li>
+              <li>
+                <span class="check-icon">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Built for men who need more than standard options
+              </li>
+            </ul>
+            <p class="card-price">From $89/mo <span>&middot; Prescription required</span></p>
+            <a href="#" class="btn btn-black">Start Assessment &#8594;</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Tadalafil Daily -->
+        <div class="product-card reveal reveal-delay-2">
+          <div class="card-image">
+            <img src="Images/curated-lifestyle-5tA3gPSm5CI-unsplash.jpg" alt="Tadalafil Daily — man in white robe, relaxed morning" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag card-tag-blue">Daily Low-Dose</span>
+            <h3 class="card-name">Tadalafil Daily</h3>
+            <p class="card-desc">Always ready. No timing required.</p>
+            <ul class="card-benefits">
+              <li>
+                <span class="check-icon check-icon-blue">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Low dose daily support with 5mg Tadalafil
+              </li>
+              <li>
+                <span class="check-icon check-icon-blue">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Stay ready anytime with no planning required
+              </li>
+              <li>
+                <span class="check-icon check-icon-blue">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Simple once daily routine
+              </li>
+              <li>
+                <span class="check-icon check-icon-blue">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </span>
+                Trusted and well established option
+              </li>
+            </ul>
+            <p class="card-price">From $49/mo <span>&middot; Prescription required</span></p>
+            <a href="#" class="btn btn-black">Start Assessment &#8594;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIFESTYLE SPLIT ===== -->
+  <section class="lifestyle" id="about">
+    <div class="lifestyle-image">
+      <img src="Images/getty-images-VT_QG7lMzmo-unsplash.jpg" alt="Mature couple embracing at beach, golden hour light" />
+    </div>
+    <div class="lifestyle-content">
+      <span class="section-label reveal">The Mavrox Difference</span>
+      <h2 class="lifestyle-h2 reveal reveal-delay-1">Built for real <em>life.</em></h2>
+      <p class="lifestyle-body reveal reveal-delay-2">Whether you want daily consistency or a more powerful on-demand option, Mavrox treatments are designed to support confidence, performance, and control.
+</p>
+      <div class="stat-cards reveal reveal-delay-3">
+        <div class="stat-card">
+          <div class="stat-number" data-target="88" data-suffix="%">0%</div>
+          <p class="stat-desc">of Mavrox patients report improved confidence within 30 days</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="35" data-suffix="%">0%</div>
+          <p class="stat-desc">of men don&#8217;t respond to single-agent PDE5 inhibitors</p>
+        </div>
+      </div>
+      <a href="#treatments" class="btn btn-orange reveal reveal-delay-4" style="align-self:center;">Find Your Formula</a>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <span class="section-label reveal">Patient Stories</span>
+      <h2 class="section-heading reveal reveal-delay-1">What patients are saying</h2>
+      <div class="testimonials-carousel">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">I tried Viagra for years. Within a week on Performaxx I noticed a difference I hadn&#8217;t felt in a long time. My confidence is back.</p>
+            <div class="testimonial-author">
+              <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face&q=80" alt="Michael T." />
+              <div>
+                <div class="testimonial-name">Michael T.</div>
+                <div class="testimonial-meta">Age 52 &middot; Performaxx&#8482; patient</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">Tadalafil Daily changed everything. I stopped thinking about timing and started enjoying life again.</p>
+            <div class="testimonial-author">
+              <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face&q=80" alt="James R." />
+              <div>
+                <div class="testimonial-name">James R.</div>
+                <div class="testimonial-meta">Age 47 &middot; Tadalafil Daily patient</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">Nothing else worked. Performaxx was the first treatment that gave me consistent results. I wish I had found this sooner.</p>
+            <div class="testimonial-author">
+              <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&q=80" alt="David K." />
+              <div>
+                <div class="testimonial-name">David K.</div>
+                <div class="testimonial-meta">Age 56 &middot; Performaxx&#8482; patient</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">The process was incredibly easy. No awkward doctor visit, just a quick intake and my prescription arrived within days. Discreet and effective.</p>
+            <div class="testimonial-author">
+              <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face&q=80" alt="Robert M." />
+              <div>
+                <div class="testimonial-name">Robert M.</div>
+                <div class="testimonial-meta">Age 61 &middot; Tadalafil Daily patient</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">My doctor had me on a single-agent pill that wasn&#8217;t cutting it. Performaxx is a completely different level. The triple formula makes a real difference.</p>
+            <div class="testimonial-author">
+              <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&crop=face&q=80" alt="Carlos V." />
+              <div>
+                <div class="testimonial-name">Carlos V.</div>
+                <div class="testimonial-meta">Age 49 &middot; Performaxx&#8482; patient</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">I was skeptical at first but the daily low dose has made intimacy spontaneous again. My partner and I are both happier than we&#8217;ve been in years.</p>
+            <div class="testimonial-author">
+              <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=80&h=80&fit=crop&crop=face&q=80" alt="Thomas B." />
+              <div>
+                <div class="testimonial-name">Thomas B.</div>
+                <div class="testimonial-meta">Age 54 &middot; Tadalafil Daily patient</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-quote">I&#8217;ve been on Performaxx for three months now. The sublingual format works fast and the results are consistent. This is exactly what I needed.</p>
+            <div class="testimonial-author">
+              <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1582896911227-cdce90a18f63?w=80&h=80&fit=crop&crop=face&q=80" alt="Alan F." />
+              <div>
+                <div class="testimonial-name">Alan F.</div>
+                <div class="testimonial-meta">Age 58 &middot; Performaxx&#8482; patient</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="testimonials-dots" id="testimonialsDots"></div>
+    </div>
+  </section>
+
+  <!-- ===== BRAND STORY ===== -->
+  <section class="brand-story" id="mission">
+    <div class="brand-story-inner">
+      <div class="brand-content">
+        <span class="section-label reveal">Our Mission</span>
+        <h2 class="brand-h2 reveal reveal-delay-1">Built for the men everyone else left behind.</h2>
+        <p class="brand-body reveal reveal-delay-2">ED has been undertreated for decades. Most men either avoid the conversation or settle for medications that partially work. Mavrox was founded on one principle: men deserve better.</p>
+        <p class="brand-body reveal reveal-delay-3">Our clinical team designs formulations for the men who need more &#8212; not the average case. Performaxx and Tadalafil Daily are the result of that commitment.</p>
+        <a href="#" class="brand-link reveal reveal-delay-4">
+          Read our story
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="brand-images reveal reveal-delay-2">
+        <div class="brand-img-wrap">
+          <img src="Images/getty-images-QbSFsPIbqSc-unsplash.jpg" alt="Mature man looking out window, contemplative" />
+        </div>
+        <div class="brand-img-wrap">
+          <img src="Images/curated-lifestyle-8_bMkO4EOa8-unsplash.jpg" alt="Laughing couple, black and white" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="how-inner">
+      <div class="section-center">
+        <span class="section-label reveal">The Process</span>
+        <h2 class="section-heading reveal reveal-delay-1">The online experience</h2>
+        <p class="section-sub reveal reveal-delay-2">Provider-prescribed care without a waiting room.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h3 class="step-title">Free Assessment</h3>
+          <p class="step-desc">Complete a 2-minute secure health questionnaire. No video call needed. Your privacy is protected at every step.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3 class="step-title">Provider Review</h3>
+          <p class="step-desc">A licensed US provider reviews your intake and prescribes the right treatment within 24 hours. No waiting rooms, no office visits.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3 class="step-title">Discreet Delivery</h3>
+          <p class="step-desc">Compounded at a licensed US pharmacy and shipped in plain, unmarked packaging. Delivered free to your door.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="cta-bg">
+      <img src="Images/kevin-wolf-TKVd2DPMm3Q-unsplash.jpg" alt="Couple silhouette, warm orange glow" />
+    </div>
+    <div class="cta-overlay" aria-hidden="true"></div>
+    <div class="cta-content">
+      <p class="cta-eyebrow reveal">Start Today</p>
+      <h2 class="cta-h2 reveal reveal-delay-1"><em>Reclaim</em> it today.</h2>
+      <p class="cta-sub reveal reveal-delay-2">Complete a short intake. Prescription issued within 24 hours.</p>
+      <div class="cta-buttons reveal reveal-delay-3">
+        <a href="#treatments" class="btn btn-white-solid">Get Started &#8212; It&#8217;s Free</a>
+        <a href="#treatments" class="btn btn-ghost-white">Compare Treatments</a>
+      </div>
+      <p class="cta-disclaimer reveal reveal-delay-4">
+        Prescription required
+        <span>&middot;</span>
+        Physician supervised
+        <span>&middot;</span>
+        Cancel anytime
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="faq-inner">
+      <span class="section-label reveal">Common Questions</span>
+      <h2 class="section-heading reveal reveal-delay-1">Frequently asked questions</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-trigger-label">What is Performaxx&#8482; and how is it different?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Performaxx&#8482; is a triple-agent sublingual tablet combining Apomorphine 3mg, Tadalafil 20mg, and Vardenafil 15mg. Unlike standard ED pills that use a single mechanism, Performaxx activates both the central arousal pathway and dual PDE5 inhibition simultaneously. It&#8217;s designed for men who haven&#8217;t had consistent success with standard single-agent treatments.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-trigger-label">How does Tadalafil Daily work?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Tadalafil Daily (5mg) is taken once every day at the same time. Because the dose stays consistent in your system, there&#8217;s no need to plan around timing. You&#8217;re simply always ready. It&#8217;s ideal for men who find on-demand dosing inconvenient or who want a more spontaneous experience.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-trigger-label">Do I need to see a doctor in person?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">No. The entire Mavrox process is online. Complete a 2-minute health intake, and a licensed US physician reviews your information and issues a prescription if appropriate &#8212; typically within 24 hours. No video calls, no office visits, no waiting rooms.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-trigger-label">Is my information private?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Yes. Mavrox is fully HIPAA compliant. Your health data is encrypted, never sold, and never shared without your consent. Shipments arrive in plain, unmarked packaging with no external indication of the contents.</div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-4">
+          <button class="faq-trigger" aria-expanded="false">
+            <span class="faq-trigger-label">Can I cancel or change my subscription?</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">Absolutely. Cancel, pause, or adjust your treatment anytime from your patient portal. There are no cancellation fees and no long-term commitments required.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="Logo/Mavrox.png" alt="MAVROX" />
+          <p class="footer-tagline">Provider-prescribed ED treatment for men who demand more. Discreet. Proven. Delivered.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Treatments</h4>
+          <ul>
+            <li><a href="#">Performaxx&#8482;</a></li>
+            <li><a href="#">Tadalafil Daily</a></li>
+            <li><a href="#">Compare Treatments</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Clinical Team</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Patient Portal</a></li>
+            <li><a href="#">Refills</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">HIPAA Notice</a></li>
+            <li><a href="#">Telehealth Consent</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Mavrox Health, Inc. All rights reserved.</p>
+        <p class="footer-rx">
+          Rx Only
+          <span>&middot;</span>
+          Compounded
+          <span>&middot;</span>
+          Not FDA-Approved
+        </p>
+      </div>
+      <div class="footer-legal">
+        <p>IMPORTANT SAFETY INFORMATION: Mavrox treatments are prescription-only compounded medications and have not been evaluated or approved by the FDA. Compounded medications are not FDA-approved and are prepared by a licensed compounding pharmacy pursuant to a valid prescription. These products may differ from FDA-approved medications in terms of safety, effectiveness, and quality. Performaxx&#8482; contains Apomorphine, Tadalafil, and Vardenafil. Tadalafil Daily contains Tadalafil 5mg. Do not take ED medications if you use nitrates for chest pain, have low blood pressure, or have been advised against sexual activity. Consult your physician before starting any treatment. Results may vary. This website is not a substitute for professional medical advice. Individual results may vary. Testimonials are representative of typical patient experiences and do not guarantee equivalent outcomes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== HAMBURGER MENU =====
+    (function() {
+      var hamburger = document.getElementById('hamburger');
+      var navMobile = document.getElementById('navMobile');
+      if (!hamburger || !navMobile) return;
+
+      hamburger.addEventListener('click', function() {
+        var isOpen = navMobile.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        navMobile.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      });
+
+      navMobile.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navMobile.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          navMobile.setAttribute('aria-hidden', 'true');
+        });
+      });
+    })();
+
+    // ===== SCROLL REVEAL =====
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    // ===== FAQ ACCORDION =====
+    (function() {
+      document.querySelectorAll('.faq-trigger').forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+          var item = trigger.closest('.faq-item');
+          var body = item.querySelector('.faq-body');
+          var icon = trigger.querySelector('.faq-icon');
+          var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+          // Close all others
+          document.querySelectorAll('.faq-trigger').forEach(function(t) {
+            if (t !== trigger) {
+              t.setAttribute('aria-expanded', 'false');
+              var b = t.closest('.faq-item').querySelector('.faq-body');
+              var ic = t.querySelector('.faq-icon');
+              b.style.maxHeight = '0';
+              ic.style.transform = 'rotate(0deg)';
+              ic.style.background = 'var(--border)';
+              if (ic.querySelector('svg')) ic.querySelector('svg').style.color = '';
+            }
+          });
+
+          if (isOpen) {
+            trigger.setAttribute('aria-expanded', 'false');
+            body.style.maxHeight = '0';
+            icon.style.transform = 'rotate(0deg)';
+            icon.style.background = 'var(--border)';
+          } else {
+            trigger.setAttribute('aria-expanded', 'true');
+            body.style.maxHeight = body.scrollHeight + 80 + 'px';
+            icon.style.transform = 'rotate(180deg)';
+            icon.style.background = 'rgba(201,75,26,0.12)';
+            if (icon.querySelector('svg')) icon.querySelector('svg').style.color = 'var(--orange)';
+          }
+        });
+      });
+    })();
+
+    // ===== TESTIMONIALS CAROUSEL =====
+    (function() {
+      var track = document.getElementById('testimonialsTrack');
+      var dotsContainer = document.getElementById('testimonialsDots');
+      if (!track || !dotsContainer) return;
+
+      var cards = track.querySelectorAll('.testimonial-card');
+      var total = cards.length;
+      var visible = window.innerWidth <= 960 ? 1 : 4;
+      var current = 0;
+      var autoTimer;
+
+      // Build dots — one per stopping position
+      function maxIndex() { return total - visible; }
+
+      function buildDots() {
+        dotsContainer.innerHTML = '';
+        var stops = maxIndex() + 1;
+        for (var i = 0; i < stops; i++) {
+          var dot = document.createElement('button');
+          dot.className = 'testimonials-dot' + (i === current ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          (function(idx) { dot.addEventListener('click', function() { goTo(idx); resetTimer(); }); })(i);
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function updateDots() {
+        var dots = dotsContainer.querySelectorAll('.testimonials-dot');
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+      }
+
+      function goTo(index) {
+        current = Math.max(0, Math.min(index, maxIndex()));
+        var cardWidth = cards[0].getBoundingClientRect().width;
+        var gap = 24; // 1.5rem
+        track.style.transform = 'translateX(-' + (current * (cardWidth + gap)) + 'px)';
+        updateDots();
+      }
+
+      function advance() {
+        goTo(current >= maxIndex() ? 0 : current + 1);
+      }
+
+      function resetTimer() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(advance, 5000);
+      }
+
+      // Pause on hover
+      track.closest('.testimonials-carousel').addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+      track.closest('.testimonials-carousel').addEventListener('mouseleave', resetTimer);
+
+      // Recalculate on resize
+      window.addEventListener('resize', function() {
+        visible = window.innerWidth <= 960 ? 1 : 4;
+        buildDots();
+        goTo(Math.min(current, maxIndex()));
+      });
+
+      buildDots();
+      resetTimer();
+    })();
+
+    // ===== LIFESTYLE PARALLAX =====
+    (function() {
+      var section = document.querySelector('.lifestyle');
+      var img = document.querySelector('.lifestyle-image img');
+      if (!section || !img) return;
+      var ticking = false;
+
+      function updateParallax() {
+        var rect = section.getBoundingClientRect();
+        var viewH = window.innerHeight;
+        // 0 = section bottom at viewport bottom, 1 = section top at viewport top
+        var progress = (viewH - rect.top) / (viewH + rect.height);
+        progress = Math.max(0, Math.min(1, progress));
+        // Translate from -25% (entering) to -5% (leaving) — 20% range of travel
+        var offset = -25 + progress * 20;
+        img.style.transform = 'translateY(' + offset + '%)';
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      updateParallax();
+    })();
+
+    // ===== STAT COUNTER =====
+    (function() {
+      function animateCounter(el) {
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1600;
+        var start = null;
+        function step(timestamp) {
+          if (!start) start = timestamp;
+          var progress = Math.min((timestamp - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          el.textContent = Math.round(ease * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      var counters = document.querySelectorAll('.stat-number[data-target]');
+      var counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function(el) { counterObserver.observe(el); });
+    })();
+
+    // ===== SMOOTH NAV SCROLL =====
+    (function() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href === '#') return;
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            var navH = document.getElementById('nav').offsetHeight;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - navH;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
