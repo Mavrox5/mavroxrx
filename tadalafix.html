@@ -3,30 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Performaxx: Triple-Agent ED Treatment | MAVROX</title>
-  <meta name="description" content="Performaxx is a compounded, multi-mechanistic sublingual ED tablet combining Apomorphine, Tadalafil, and Vardenafil. Designed for men who need more than standard options." />
+  <title>Tadalafix: Once-Daily ED Support | MAVROX</title>
+  <meta name="description" content="Tadalafix is a once-daily, low-dose flex-dose tablet that keeps you ready without planning around a dose. Provider-prescribed and delivered discreetly." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #F8F4EE;
-      --bg2: #F0EBE2;
-      --black: #0F0E0D;
-      --text: #1C1917;
+      --bg: #F0ECE3;
+      --bg2: #E8E4DB;
+      --black: #1C1A19;
+      --text: #1C1A19;
       --muted: #6B6460;
       --border: rgba(28,25,23,0.09);
-      --orange: #C94B1A;
-      --orange2: #E05E28;
+      --orange: #C94B19;
+      --orange2: #D45A25;
+      --navy: #20293E;
+      --cobalt: #2C4581;
       --nav-h: 60px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Archivo', sans-serif;
       background: var(--bg);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
@@ -45,7 +47,7 @@
       z-index: 9999;
     }
 
-    h1, h2, h3, h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; line-height: 1.05; }
+    h1, h2, h3, h4 { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-weight: 700; line-height: 1.05; letter-spacing: 0.02em; text-transform: uppercase; }
     p { line-height: 1.65; }
     a { text-decoration: none; color: inherit; }
 
@@ -54,12 +56,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Archivo', sans-serif;
       font-size: 0.875rem;
       font-weight: 500;
       letter-spacing: 0.01em;
       padding: 12px 24px;
-      border-radius: 100px;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -72,17 +74,15 @@
     .btn-ghost-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
     .btn-ghost-white:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.07); }
     .btn-lg { padding: 16px 36px; font-size: 1.05rem; font-weight: 600; }
-    .btn-full { width: 100%; justify-content: center; border-radius: 12px; }
+    .btn-full { width: 100%; justify-content: center; border-radius: 10px; }
 
     /* ===================== NAV ===================== */
     .nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: var(--nav-h);
       z-index: 100;
-      background: rgba(248,244,238,0.95);
+      background: rgba(240,236,227,0.95);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
@@ -97,13 +97,7 @@
     }
     .nav-logo img { height: 22px; display: block; }
     .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text);
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text); opacity: 0.7; transition: opacity 0.2s; }
     .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--orange); }
     .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
     .nav-hamburger {
@@ -120,10 +114,8 @@
     .nav-mobile {
       display: none;
       position: fixed;
-      top: var(--nav-h);
-      left: 0;
-      right: 0;
-      background: rgba(248,244,238,0.97);
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(240,236,227,0.97);
       backdrop-filter: blur(16px);
       padding: 1.5rem 2rem 2rem;
       flex-direction: column;
@@ -163,32 +155,18 @@
     /* Image column */
     .pf-image-col { position: sticky; top: calc(var(--nav-h) + 2rem); }
     .pf-main-image {
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
       aspect-ratio: 4/5;
       background: var(--bg2);
       margin-bottom: 1rem;
     }
-    .pf-main-image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: opacity 0.3s ease;
-    }
-    .pf-thumbs {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-    }
+    .pf-main-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: opacity 0.3s ease; }
+    .pf-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
     .pf-thumb {
-      border-radius: 12px;
-      overflow: hidden;
-      aspect-ratio: 1;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: border-color 0.2s;
-      background: var(--bg2);
+      border-radius: 10px; overflow: hidden; aspect-ratio: 1;
+      cursor: pointer; border: 2px solid transparent;
+      transition: border-color 0.2s; background: var(--bg2);
     }
     .pf-thumb.active { border-color: var(--orange); }
     .pf-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -196,134 +174,31 @@
     /* Detail column */
     .pf-detail-col { padding-top: 0.5rem; }
     .product-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(201,75,26,0.1);
-      border: 1px solid rgba(201,75,26,0.25);
-      color: var(--orange);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 100px;
-      margin-bottom: 1.25rem;
-      width: fit-content;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(201,75,26,0.1); border: 1px solid rgba(201,75,26,0.25);
+      color: var(--orange); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 100px; margin-bottom: 1.25rem; width: fit-content;
     }
-    .product-tag::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--orange);
-    }
-    .pf-name {
-      font-size: clamp(3.5rem, 6vw, 5.5rem);
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.01em;
-    }
-    .pf-type {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.9rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1.75rem;
-      font-weight: 400;
-    }
-    .pf-price {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-    .pf-price-sub {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 1.75rem;
-    }
-    .pf-ingredients {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
-    }
+    .product-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
+    .pf-name { font-size: clamp(3.5rem, 6vw, 5.5rem); color: var(--text); line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+    .pf-type { font-family: 'Archivo', sans-serif; font-size: 0.9rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.75rem; font-weight: 400; }
+    .pf-price { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-size: 2rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+    .pf-price-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.75rem; }
+    .pf-ingredients { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
     .pf-ingredient-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #fff;
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-size: 0.82rem;
-      font-weight: 500;
-      padding: 7px 14px;
-      border-radius: 100px;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px solid var(--border);
+      color: var(--text); font-size: 0.82rem; font-weight: 500;
+      padding: 7px 14px; border-radius: 100px;
     }
     .pf-ingredient-pill svg { color: var(--orange); flex-shrink: 0; }
-    .pf-desc {
-      font-size: 1.05rem;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .pf-specs {
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .pf-spec-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-    }
-    .pf-spec-row:last-child { border-bottom: none; }
-    .pf-spec-label { color: var(--muted); font-weight: 400; flex-shrink: 0; }
-    .pf-spec-value { color: var(--text); font-weight: 500; text-align: right; }
-    .pf-cta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .pf-cta .btn-orange {
-      padding: 17px 28px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 12px;
-      width: 100%;
-      justify-content: center;
-    }
-    .pf-cta .btn-ghost-dark {
-      padding: 15px 28px;
-      font-size: 0.95rem;
-      border-radius: 12px;
-      width: 100%;
-      justify-content: center;
-    }
-    .pf-trust {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 1rem 1.25rem;
-      align-items: center;
-    }
-    .pf-trust-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.78rem;
-      white-space: nowrap;
-      color: var(--muted);
-    }
+    .pf-desc { font-size: 1.05rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .pf-cta { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .pf-cta .btn-orange { padding: 17px 28px; font-size: 1rem; font-weight: 600; border-radius: 10px; width: 100%; justify-content: center; }
+    .pf-cta .btn-ghost-dark { padding: 15px 28px; font-size: 0.95rem; border-radius: 10px; width: 100%; justify-content: center; }
+    .pf-trust { display: flex; flex-wrap: nowrap; gap: 1rem 1.25rem; align-items: center; }
+    .pf-trust-item { display: flex; align-items: center; gap: 5px; font-size: 0.78rem; white-space: nowrap; color: var(--muted); }
     .pf-trust-item svg { color: var(--orange); flex-shrink: 0; }
 
     /* Product feature mini accordion */
@@ -334,7 +209,7 @@
       justify-content: space-between; padding: 1rem 0;
       background: none; border: none; cursor: pointer;
       text-align: left; gap: 1rem;
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Archivo', sans-serif;
       font-size: 1rem; font-weight: 500; color: var(--text);
     }
     .pf-acc-trigger:hover { color: var(--orange); }
@@ -346,255 +221,94 @@
     }
     .pf-acc-icon svg { color: var(--muted); transition: color 0.2s; }
     .pf-acc-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .pf-acc-body-inner {
-      font-size: 0.95rem; color: var(--muted);
-      line-height: 1.75; padding-bottom: 1rem;
-    }
+    .pf-acc-body-inner { font-size: 0.95rem; color: var(--muted); line-height: 1.75; padding-bottom: 1rem; }
 
     .section-label {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 1rem;
+      display: inline-block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem;
     }
-    .section-heading {
-      font-size: clamp(2.25rem, 4vw, 3.25rem);
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
+    .section-heading { font-size: clamp(2.25rem, 4vw, 3.25rem); color: var(--text); margin-bottom: 1.5rem; }
 
     /* ===================== INGREDIENTS ===================== */
-    .ingredients {
-      background: var(--black);
-      padding: 5rem 2.5rem;
-    }
-    .ingredients-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .ingredients-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
+    .ingredients { background: var(--navy); padding: 5rem 2.5rem; }
+    .ingredients-inner { max-width: 1100px; margin: 0 auto; }
+    .ingredients-header { text-align: center; margin-bottom: 4rem; }
     .ingredients-header .section-label { color: rgba(255,255,255,0.4); }
     .ingredients-header .section-heading { color: #fff; }
-    .ingredients-header p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.5);
-      max-width: 560px;
-      margin: 1rem auto 0;
-      line-height: 1.7;
-    }
-    .ingredients-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
+    .ingredients-header p { font-size: 1.1rem; color: rgba(255,255,255,0.5); max-width: 560px; margin: 1rem auto 0; line-height: 1.7; }
+    .ingredients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .ingredient-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.3s;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px; padding: 2.5rem 2rem;
+      position: relative; overflow: hidden; transition: border-color 0.3s;
     }
     .ingredient-card:hover { border-color: rgba(201,75,26,0.4); }
-    .ingredient-number {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 5rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.04);
-      line-height: 1;
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-    }
-    .ingredient-name {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.25rem;
-      line-height: 1.1;
-    }
-    .ingredient-dose {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--orange2);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-    .ingredient-mechanism {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: rgba(201,75,26,0.12);
-      border: 1px solid rgba(201,75,26,0.2);
-      color: #e07a56;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 100px;
-      margin-bottom: 1.25rem;
-    }
-    .ingredient-desc {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.75;
-    }
+    .ingredient-number { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-size: 5rem; font-weight: 700; color: rgba(255,255,255,0.04); line-height: 1; position: absolute; top: 1rem; right: 1.5rem; }
+    .ingredient-name { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; line-height: 1.1; }
+    .ingredient-dose { font-size: 0.85rem; font-weight: 600; color: var(--orange2); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .ingredient-mechanism { display: inline-flex; align-items: center; gap: 5px; background: rgba(201,75,26,0.12); border: 1px solid rgba(201,75,26,0.2); color: #e07a56; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; margin-bottom: 1.25rem; }
+    .ingredient-desc { font-size: 1rem; color: rgba(255,255,255,0.5); line-height: 1.75; }
 
-    /* ===================== HOW TO USE ===================== */
-    .how-to-use {
-      background: var(--bg2);
-      padding: 5rem 2.5rem;
-    }
-    .how-to-use-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+    /* Single-ingredient layout - wider card */
+    .ingredients-grid.single { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+    .ingredients-grid.single .ingredient-card { padding: 3rem 2.5rem; }
+    .ingredients-grid.single .ingredient-name { font-size: 2.5rem; }
+    .ingredients-grid.single .ingredient-desc { font-size: 1.05rem; }
+
+    /* Dose range callout */
+    .dose-range {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-    .usage-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .usage-step {
-      display: flex;
       gap: 1.5rem;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid var(--border);
+      max-width: 640px;
+      margin: 2rem auto 0;
     }
+    .dose-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-align: center;
+    }
+    .dose-card-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.5rem; }
+    .dose-card-value { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 0.25rem; }
+    .dose-card-sub { font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+
+    /* ===================== HOW TO USE ===================== */
+    .how-to-use { background: var(--bg2); padding: 5rem 2.5rem; }
+    .how-to-use-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .usage-steps { display: flex; flex-direction: column; gap: 0; }
+    .usage-step { display: flex; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
     .usage-step:last-child { border-bottom: none; }
-    .usage-step-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.25rem;
-      font-weight: 700;
-      color: rgba(201,75,26,0.2);
-      line-height: 1;
-      min-width: 2.5rem;
-      padding-top: 2px;
-    }
-    .usage-step-content h4 {
-      font-size: 1.2rem;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-    .usage-step-content p {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-    .warning-box {
-      background: rgba(201,75,26,0.07);
-      border: 1px solid rgba(201,75,26,0.2);
-      border-radius: 14px;
-      padding: 1.5rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      margin-top: 2rem;
-    }
+    .usage-step-num { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-size: 2.25rem; font-weight: 700; color: rgba(201,75,26,0.2); line-height: 1; min-width: 2.5rem; padding-top: 2px; }
+    .usage-step-content h4 { font-size: 1.2rem; color: var(--text); margin-bottom: 0.4rem; }
+    .usage-step-content p { font-size: 1rem; color: var(--muted); line-height: 1.65; }
+    .warning-box { background: rgba(201,75,26,0.07); border: 1px solid rgba(201,75,26,0.2); border-radius: 14px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; margin-top: 2rem; }
     .warning-box svg { color: var(--orange); flex-shrink: 0; margin-top: 2px; }
     .warning-box p { font-size: 0.95rem; color: var(--text); line-height: 1.6; }
-    .usage-image {
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      position: sticky;
-      top: calc(var(--nav-h) + 2rem);
-    }
-    .usage-image img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .usage-image { border-radius: 16px; overflow: hidden; aspect-ratio: 4/5; position: sticky; top: calc(var(--nav-h) + 2rem); }
+    .usage-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* ===================== WHO IT'S FOR ===================== */
-    .for-who {
-      background: var(--bg);
-      padding: 5rem 2.5rem;
-    }
-    .for-who-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .for-who-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    .for-who-header .section-sub {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0.75rem auto 0;
-      line-height: 1.7;
-    }
-    .for-who-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .for-who-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-    }
-    .for-who-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      background: rgba(201,75,26,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-    }
+    .for-who { background: var(--bg); padding: 5rem 2.5rem; }
+    .for-who-inner { max-width: 1100px; margin: 0 auto; }
+    .for-who-header { text-align: center; margin-bottom: 3.5rem; }
+    .for-who-header .section-sub { font-size: 1.15rem; color: var(--muted); max-width: 520px; margin: 0.75rem auto 0; line-height: 1.7; }
+    .for-who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .for-who-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+    .for-who-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(201,75,26,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
     .for-who-icon svg { color: var(--orange); }
     .for-who-card h3 { font-size: 1.3rem; color: var(--text); margin-bottom: 0.6rem; }
     .for-who-card p { font-size: 1rem; color: var(--muted); line-height: 1.65; }
 
     /* ===================== TESTIMONIALS ===================== */
-    .testimonials {
-      background: var(--bg2);
-      padding: 5rem 2.5rem;
-    }
-    .testimonials-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .testimonials-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-    .testimonial-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-    }
+    .testimonials { background: var(--bg2); padding: 5rem 2.5rem; }
+    .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+    .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    .testimonial-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
     .testimonial-stars { color: #f5c842; letter-spacing: 2px; font-size: 1rem; margin-bottom: 1rem; }
-    .testimonial-quote {
-      font-size: 1.05rem;
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
+    .testimonial-quote { font-size: 1.05rem; color: var(--text); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
     .testimonial-quote::before { content: '\201C'; }
     .testimonial-quote::after { content: '\201D'; }
     .testimonial-author { display: flex; align-items: center; gap: 12px; }
@@ -603,39 +317,14 @@
     .testimonial-meta { font-size: 0.875rem; color: var(--muted); margin-top: 2px; }
 
     /* ===================== CTA BANNER ===================== */
-    .cta-banner {
-      position: relative;
-      min-height: 560px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
+    .cta-banner { position: relative; min-height: 560px; display: flex; align-items: center; overflow: hidden; }
     .cta-bg { position: absolute; inset: 0; z-index: 0; }
     .cta-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-    .cta-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(15,14,13,0.9) 0%, rgba(15,14,13,0.55) 55%, rgba(15,14,13,0.2) 100%);
-      z-index: 1;
-    }
-    .cta-content {
-      position: relative; z-index: 2;
-      padding: 4rem 5rem;
-      max-width: 620px;
-    }
-    .cta-eyebrow {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--orange2); margin-bottom: 1.25rem;
-    }
-    .cta-h2 {
-      font-size: clamp(2.75rem, 5vw, 4.5rem);
-      color: #fff; margin-bottom: 1.25rem;
-    }
-    .cta-sub {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 2.5rem; line-height: 1.65;
-    }
+    .cta-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(32,41,62,0.9) 0%, rgba(32,41,62,0.55) 55%, rgba(32,41,62,0.2) 100%); z-index: 1; }
+    .cta-content { position: relative; z-index: 2; padding: 4rem 5rem; max-width: 620px; }
+    .cta-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange2); margin-bottom: 1.25rem; }
+    .cta-h2 { font-size: clamp(2.75rem, 5vw, 4.5rem); color: #fff; margin-bottom: 1.25rem; }
+    .cta-sub { font-size: 1.15rem; color: rgba(255,255,255,0.6); margin-bottom: 2.5rem; line-height: 1.65; }
     .cta-buttons { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 
     /* ===================== FAQ ===================== */
@@ -645,39 +334,20 @@
     .faq-list { display: block; }
     .faq-item { border-top: 1px solid var(--border); }
     .faq-item:last-child { border-bottom: 1px solid var(--border); }
-    .faq-trigger {
-      width: 100%; display: flex; align-items: center;
-      justify-content: space-between; padding: 1.5rem 0;
-      background: none; border: none; cursor: pointer; text-align: left; gap: 1rem;
-    }
-    .faq-trigger-label { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; color: var(--text); }
-    .faq-icon {
-      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-      background: var(--border); display: flex; align-items: center;
-      justify-content: center; transition: transform 0.3s, background 0.2s;
-    }
+    .faq-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; background: none; border: none; cursor: pointer; text-align: left; gap: 1rem; }
+    .faq-trigger-label { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-size: 1.3rem; color: var(--text); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; transition: transform 0.3s, background 0.2s; }
     .faq-icon svg { color: var(--muted); transition: color 0.2s; }
     .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
     .faq-body-inner { font-size: 1.05rem; color: var(--muted); line-height: 1.75; padding-bottom: 1.5rem; }
 
     /* ===================== FOOTER ===================== */
-    .footer { background: var(--black); padding: 4rem 2.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer { background: var(--navy); padding: 4rem 2.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
     .footer-inner { max-width: 1200px; margin: 0 auto; }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      margin-bottom: 2rem;
-    }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 2rem; }
     .footer-brand img { height: 20px; display: block; margin-bottom: 1rem; }
     .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.35); line-height: 1.6; max-width: 220px; }
-    .footer-col h4 {
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem;
-    }
+    .footer-col h4 { font-family: 'Archivo', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.65rem; }
     .footer-col ul li a { font-size: 0.875rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
@@ -686,37 +356,23 @@
     .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
     .footer-rx { font-size: 0.78rem; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
     .footer-rx span { margin: 0 8px; opacity: 0.4; }
-    .footer-legal {
-      width: 100%; margin-top: 1.5rem; padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.73rem; color: rgba(255,255,255,0.2); line-height: 1.65;
-    }
+    .footer-legal { width: 100%; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.73rem; color: rgba(255,255,255,0.2); line-height: 1.65; }
 
     /* ===================== CAROUSEL ===================== */
     .t-carousel { position: relative; }
     .t-arrow {
       display: none;
-      width: 40px; height: 40px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: #fff;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: 50%; background: #fff;
+      border: 1px solid var(--border); cursor: pointer;
+      align-items: center; justify-content: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: box-shadow 0.2s, border-color 0.2s;
       align-self: center;
     }
     .t-arrow:hover { border-color: rgba(28,25,23,0.3); box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
     .t-dots { display: none; justify-content: center; gap: 8px; margin-top: 1.25rem; }
-    .t-dot {
-      width: 8px; height: 8px; padding: 0;
-      border-radius: 50%;
-      background: rgba(28,25,23,0.15);
-      border: none; cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-    }
+    .t-dot { width: 8px; height: 8px; padding: 0; border-radius: 50%; background: rgba(28,25,23,0.15); border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; }
     .t-dot.active { background: var(--orange); transform: scale(1.25); }
 
     /* ===================== RESPONSIVE ===================== */
@@ -725,6 +381,8 @@
       .pf-image-col { position: static; }
       .pf-main-image { aspect-ratio: 16/10; }
       .ingredients-grid { grid-template-columns: 1fr; }
+      .ingredients-grid.single { grid-template-columns: 1fr; max-width: 100%; }
+      .dose-range { grid-template-columns: 1fr 1fr; max-width: 100%; }
       .how-to-use-inner { grid-template-columns: 1fr; gap: 3rem; }
       .usage-image { position: static; aspect-ratio: 16/9; }
       .for-who-grid { grid-template-columns: repeat(2, 1fr); }
@@ -746,13 +404,10 @@
       .nav-logo { grid-column: 2; display: flex; justify-content: center; align-items: center; }
       .nav-logo img { height: 16px; }
       .nav-actions { grid-column: 3; justify-self: end; align-self: center; }
-      .nav-actions .btn-orange {
-        padding: 7px 14px;
-        font-size: 0.78rem;
-        border-radius: 100px;
-      }
+      .nav-actions .btn-orange { padding: 7px 14px; font-size: 0.78rem; border-radius: 8px; }
       .product-feature { padding: 4rem 1.25rem 3rem; padding-top: calc(var(--nav-h) + 2rem); }
       .ingredients { padding: 4rem 1.25rem; }
+      .dose-range { grid-template-columns: 1fr 1fr; }
       .how-to-use { padding: 4rem 1.25rem; }
       .for-who { padding: 4rem 1.25rem; }
       .for-who-grid { grid-template-columns: 1fr; }
@@ -763,27 +418,12 @@
       .footer { padding: 3rem 1.25rem 1.5rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; }
-
-      /* Trust items wrap on mobile */
       .pf-trust { flex-wrap: wrap; gap: 0.75rem; }
 
       /* Mobile carousel */
-      .t-carousel {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .t-track {
-        flex: 1;
-        overflow: hidden;
-        min-width: 0;
-      }
-      .testimonials-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 0;
-        transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
+      .t-carousel { display: flex; align-items: center; gap: 0.5rem; }
+      .t-track { flex: 1; overflow: hidden; min-width: 0; }
+      .testimonials-grid { display: flex; flex-wrap: nowrap; gap: 0; transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
       .testimonial-card { flex: 0 0 100%; min-width: 0; }
       .t-arrow { display: flex; }
       .t-dots { display: flex; }
@@ -802,8 +442,8 @@
         <img src="Logo/Mavrox-1.png" alt="MAVROX" />
       </a>
       <ul class="nav-links">
-        <li><a href="performaxx.html" class="active">Performaxx</a></li>
-        <li><a href="tadalafil-daily.html">Tadalafil Daily</a></li>
+        <li><a href="performax.html">Performax</a></li>
+        <li><a href="tadalafix.html" class="active">Tadalafix</a></li>
       </ul>
       <div class="nav-actions">
         <a href="#" class="btn btn-ghost-dark">Sign In</a>
@@ -813,8 +453,8 @@
   </nav>
 
   <div class="nav-mobile" id="navMobile" aria-hidden="true">
-    <a href="performaxx.html">Performaxx</a>
-    <a href="tadalafil-daily.html">Tadalafil Daily</a>
+    <a href="performax.html">Performax</a>
+    <a href="tadalafix.html">Tadalafix</a>
     <a href="#" class="btn btn-ghost-dark">Sign In</a>
     <a href="#assessment" class="btn btn-orange">Get Started</a>
   </div>
@@ -826,49 +466,45 @@
       <!-- Image Column -->
       <div class="pf-image-col">
         <div class="pf-main-image">
-          <img id="pfMainImg" src="Images/andrej-lisakov-c8EWOq3wX5s-unsplash.jpg" alt="Performaxx" loading="eager" />
+          <img id="pfMainImg" src="Images/curated-lifestyle-5tA3gPSm5CI-unsplash.jpg" alt="Tadalafix" loading="eager" />
         </div>
         <div class="pf-thumbs">
-          <div class="pf-thumb active" data-src="Images/andrej-lisakov-c8EWOq3wX5s-unsplash.jpg">
-            <img src="Images/andrej-lisakov-c8EWOq3wX5s-unsplash.jpg" alt="" />
+          <div class="pf-thumb active" data-src="Images/curated-lifestyle-5tA3gPSm5CI-unsplash.jpg">
+            <img src="Images/curated-lifestyle-5tA3gPSm5CI-unsplash.jpg" alt="" />
           </div>
-          <div class="pf-thumb" data-src="Images/andrej-lisakov-hS_QwpoaUlg-unsplash.jpg">
-            <img src="Images/andrej-lisakov-hS_QwpoaUlg-unsplash.jpg" alt="" />
+          <div class="pf-thumb" data-src="Images/curated-lifestyle-8_bMkO4EOa8-unsplash.jpg">
+            <img src="Images/curated-lifestyle-8_bMkO4EOa8-unsplash.jpg" alt="" />
           </div>
-          <div class="pf-thumb" data-src="Images/andrej-lisakov-jEc_tSjV7Rk-unsplash.jpg">
-            <img src="Images/andrej-lisakov-jEc_tSjV7Rk-unsplash.jpg" alt="" />
+          <div class="pf-thumb" data-src="Images/getty-images-eKkkWfBM5SM-unsplash.jpg">
+            <img src="Images/getty-images-eKkkWfBM5SM-unsplash.jpg" alt="" />
           </div>
         </div>
       </div>
 
       <!-- Detail Column -->
       <div class="pf-detail-col">
-        <div class="product-tag">Triple-Agent Formula</div>
-        <h1 class="pf-name">Performaxx</h1>
-        <p class="pf-type">Sublingual Flex-Dose Tablet &nbsp;·&nbsp; 1 Tablet</p>
+        <div class="product-tag">Once-Daily Treatment</div>
+        <h1 class="pf-name">Tadalafix</h1>
+        <p class="pf-type">Flex-Dose Tablet &nbsp;·&nbsp; Daily Use</p>
 
-        <p class="pf-price">From $89<span style="font-size:1.1rem;font-weight:400">/mo</span></p>
+        <p class="pf-price">From $49<span style="font-size:1.1rem;font-weight:400">/mo</span></p>
 
         <div class="pf-ingredients">
           <span class="pf-ingredient-pill">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Apomorphine 3mg
+            Tadalafil 2.5–5mg daily
           </span>
           <span class="pf-ingredient-pill">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Tadalafil 20mg
-          </span>
-          <span class="pf-ingredient-pill">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Vardenafil 15mg
+            Up to 20mg per day
           </span>
         </div>
 
-        <p class="pf-desc">Performaxx is a compounded, multi-mechanistic sublingual formulation designed to support erectile response and sexual performance, especially in men who have not responded optimally to monotherapy with phosphodiesterase type 5 (PDE5) inhibitors. It addresses both central arousal pathways and peripheral mechanisms simultaneously.</p>
+        <p class="pf-desc">Tadalafix provides continuous, low-level PDE5 inhibition so you stay ready without planning around a dose. Take it once a day, at the same time each day, and let the treatment work quietly in the background.</p>
 
         <div class="pf-cta">
           <a href="#assessment" class="btn btn-orange">Get Started &rarr;</a>
-          <a href="#ingredients" class="btn btn-ghost-dark">See the Full Formula</a>
+          <a href="#ingredients" class="btn btn-ghost-dark">How It Works</a>
         </div>
 
         <div class="pf-trust">
@@ -889,31 +525,31 @@
         <div class="pf-accordion" id="pfAccordion">
           <div class="pf-acc-item">
             <button class="pf-acc-trigger" aria-expanded="false">
-              What is Performaxx?
+              What is Tadalafix?
               <div class="pf-acc-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
             </button>
-            <div class="pf-acc-body"><div class="pf-acc-body-inner">Performaxx is a compounded, multi-mechanistic sublingual tablet designed to support erectile response in men, especially those who have not responded optimally to standard single-agent PDE5 inhibitors. It combines three active ingredients (Apomorphine, Tadalafil, and Vardenafil) that work across both central arousal pathways and peripheral vascular mechanisms simultaneously.</div></div>
+            <div class="pf-acc-body"><div class="pf-acc-body-inner">Tadalafix is a low-dose, once-daily tablet containing Tadalafil, a PDE5 inhibitor that promotes blood flow to penile tissue. Unlike on-demand dosing, the daily approach maintains a steady concentration in your body, so you don't need to time a dose before activity. It's the treatment for men who want to stop thinking about it.</div></div>
           </div>
           <div class="pf-acc-item">
             <button class="pf-acc-trigger" aria-expanded="false">
-              How do I take Performaxx?
+              How do I take Tadalafix?
               <div class="pf-acc-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
             </button>
-            <div class="pf-acc-body"><div class="pf-acc-body-inner">Place &frac12; to 1 full tablet under your tongue and allow it to dissolve completely. Do not chew or swallow whole. Take it 30–60 minutes before sexual activity. New patients should start with half a tablet to assess tolerance. Do not exceed one dose per 48-hour period.</div></div>
+            <div class="pf-acc-body"><div class="pf-acc-body-inner">Take one tablet orally at the same time each day, with or without food. Consistency is key. Most patients start at 2.5mg and may increase to 5mg as directed by their provider. Do not exceed the dose prescribed without consulting your provider. It may take several days of consistent use before the full effect is established.</div></div>
           </div>
           <div class="pf-acc-item">
             <button class="pf-acc-trigger" aria-expanded="false">
-              How is Performaxx different from other ED meds?
+              How is it different from on-demand ED meds?
               <div class="pf-acc-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
             </button>
-            <div class="pf-acc-body"><div class="pf-acc-body-inner">Standard ED medications like Viagra or Cialis use a single PDE5 inhibitor. Performaxx combines two PDE5 inhibitors (Tadalafil and Vardenafil) with Apomorphine, a dopamine receptor agonist that activates the arousal signal in the brain. This triple-agent approach addresses mechanisms that single-agent treatments miss entirely, making it effective for men who haven't had success elsewhere.</div></div>
+            <div class="pf-acc-body"><div class="pf-acc-body-inner">On-demand medications like standard Viagra or Cialis are taken 30–60 minutes before activity and wear off within hours. Tadalafix uses a lower dose taken every day, building a steady baseline in your body. There's no timing, no planning, and no pill to take before intimacy. You're simply always ready.</div></div>
           </div>
           <div class="pf-acc-item">
             <button class="pf-acc-trigger" aria-expanded="false">
               Common side effects
               <div class="pf-acc-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
             </button>
-            <div class="pf-acc-body"><div class="pf-acc-body-inner">Common side effects may include headache, flushing, nasal congestion, and mild nausea (most associated with the Apomorphine component). These are generally mild and transient. Do not use Performaxx if you take nitrates for chest pain, have severely low blood pressure, or have been advised against sexual activity due to cardiovascular conditions. Consult your provider if you have any concerns.</div></div>
+            <div class="pf-acc-body"><div class="pf-acc-body-inner">Common side effects may include headache, back pain, muscle aches, flushing, and nasal congestion. These are typically mild and often resolve within a few days of consistent use as your body adjusts. Do not use Tadalafix if you take nitrates for chest pain, have severely low blood pressure, or have been advised against sexual activity. Consult your provider with any concerns.</div></div>
           </div>
         </div>
       </div>
@@ -926,36 +562,33 @@
     <div class="ingredients-inner">
       <div class="ingredients-header">
         <span class="section-label reveal">The Formula</span>
-        <h2 class="section-heading reveal reveal-delay-1">Three agents. One complete response.</h2>
-        <p class="reveal reveal-delay-2">Performaxx combines three complementary active ingredients that work across different biological pathways to support the full erectile response.</p>
+        <h2 class="section-heading reveal reveal-delay-1">One ingredient. Always working.</h2>
+        <p class="reveal reveal-delay-2">Tadalafix uses a single, well-studied active ingredient at a low daily dose to maintain consistent PDE5 inhibition around the clock.</p>
       </div>
-      <div class="ingredients-grid">
 
+      <div class="ingredients-grid single">
         <div class="ingredient-card reveal reveal-delay-1">
           <div class="ingredient-number">01</div>
-          <div class="ingredient-name">Apomorphine</div>
-          <div class="ingredient-dose">3mg</div>
-          <div class="ingredient-mechanism">Central Arousal Pathway</div>
-          <p class="ingredient-desc">A dopamine receptor agonist that acts centrally in the brain to initiate the arousal signal. It addresses the neurological component of erectile response, which standard PDE5 inhibitors don't touch.</p>
-        </div>
-
-        <div class="ingredient-card reveal reveal-delay-2">
-          <div class="ingredient-number">02</div>
           <div class="ingredient-name">Tadalafil</div>
-          <div class="ingredient-dose">20mg</div>
-          <div class="ingredient-mechanism">PDE5 Inhibition, Long Duration</div>
-          <p class="ingredient-desc">A long-acting PDE5 inhibitor that promotes smooth muscle relaxation and vasodilation in penile tissue. Provides sustained support with a duration of action up to 36 hours.</p>
+          <div class="ingredient-dose">2.5–5mg daily</div>
+          <div class="ingredient-mechanism">PDE5 Inhibition</div>
+          <p class="ingredient-desc">A long-acting PDE5 inhibitor that relaxes smooth muscle and increases blood flow to penile tissue by blocking the enzyme that restricts it. At daily low doses, Tadalafil maintains a steady plasma concentration, producing a continuous baseline of support rather than a peak-and-crash effect. This is the same active ingredient in Cialis, trusted by millions of men worldwide.</p>
         </div>
-
-        <div class="ingredient-card reveal reveal-delay-3">
-          <div class="ingredient-number">03</div>
-          <div class="ingredient-name">Vardenafil</div>
-          <div class="ingredient-dose">15mg</div>
-          <div class="ingredient-mechanism">PDE5 Inhibition, Rapid Onset</div>
-          <p class="ingredient-desc">A potent, fast-acting PDE5 inhibitor that complements Tadalafil with quicker onset. Together they provide dual PDE5 inhibition for men who need more than a single agent can deliver.</p>
-        </div>
-
       </div>
+
+      <div class="dose-range reveal reveal-delay-2">
+        <div class="dose-card">
+          <div class="dose-card-label">Standard Daily Dose</div>
+          <div class="dose-card-value">2.5–5mg</div>
+          <div class="dose-card-sub">per day, as directed</div>
+        </div>
+        <div class="dose-card">
+          <div class="dose-card-label">Maximum Daily Dose</div>
+          <div class="dose-card-value">20mg</div>
+          <div class="dose-card-sub">provider-directed only</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -964,44 +597,44 @@
     <div class="how-to-use-inner">
       <div>
         <span class="section-label reveal">Dosage &amp; Use</span>
-        <h2 class="section-heading reveal reveal-delay-1">Simple. Flexible. On your schedule.</h2>
+        <h2 class="section-heading reveal reveal-delay-1">Take it once. Forget about it.</h2>
         <div class="usage-steps reveal reveal-delay-2">
           <div class="usage-step">
             <div class="usage-step-num">01</div>
             <div class="usage-step-content">
-              <h4>Place under your tongue</h4>
-              <p>Performaxx is a sublingual tablet. Place it under your tongue and allow it to dissolve fully. Do not chew or swallow whole.</p>
+              <h4>Take once daily, same time each day</h4>
+              <p>Consistency is everything with daily dosing. Take your tablet at the same time each morning or evening, with or without food.</p>
             </div>
           </div>
           <div class="usage-step">
             <div class="usage-step-num">02</div>
             <div class="usage-step-content">
-              <h4>Take 30–60 minutes before activity</h4>
-              <p>Plan for at least 30 minutes before sexual activity. The sublingual delivery allows for faster absorption than standard oral tablets.</p>
+              <h4>No timing required</h4>
+              <p>Unlike on-demand treatments, there's nothing to take before intimacy. Tadalafix maintains a steady level in your system, so you're always ready.</p>
             </div>
           </div>
           <div class="usage-step">
             <div class="usage-step-num">03</div>
             <div class="usage-step-content">
-              <h4>Start with half a tablet</h4>
-              <p>New patients should begin with &frac12; tablet to assess tolerance. A full tablet may be taken as directed by your provider.</p>
+              <h4>Start at 2.5mg, adjust as directed</h4>
+              <p>Most patients begin at 2.5mg per day. Your provider may increase your dose to 5mg based on your response and tolerability. Never adjust your dose without guidance.</p>
             </div>
           </div>
           <div class="usage-step">
             <div class="usage-step-num">04</div>
             <div class="usage-step-content">
-              <h4>Use only as needed</h4>
-              <p>Performaxx is an on-demand treatment. Take it only when needed. Do not use daily unless directed by your provider.</p>
+              <h4>Allow a few days to establish</h4>
+              <p>Daily Tadalafil builds up over several days. Give it at least a week of consistent use before evaluating whether the dose is right for you.</p>
             </div>
           </div>
         </div>
         <div class="warning-box">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <p><strong>Important:</strong> Do not exceed more than one dose in a 48-hour period. Do not take with nitrates, alpha-blockers, or if you have been advised against sexual activity by a physician.</p>
+          <p><strong>Important:</strong> Do not take Tadalafix with nitrates, alpha-blockers, or if you have been advised against sexual activity. Do not exceed your prescribed dose. Contact your provider if you experience prolonged side effects.</p>
         </div>
       </div>
       <div class="usage-image reveal reveal-delay-3">
-        <img src="Images/getty-images-QbSFsPIbqSc-unsplash.jpg" alt="Man, confident and relaxed" />
+        <img src="Images/getty-images-VT_QG7lMzmo-unsplash.jpg" alt="Man, confident and relaxed" />
       </div>
     </div>
   </section>
@@ -1011,30 +644,30 @@
     <div class="for-who-inner">
       <div class="for-who-header">
         <span class="section-label reveal">Who It's For</span>
-        <h2 class="section-heading reveal reveal-delay-1">Designed for men who need a different approach.</h2>
-        <p class="section-sub reveal reveal-delay-2">Performaxx is not a first-line treatment for everyone. It is engineered for men with specific challenges.</p>
+        <h2 class="section-heading reveal reveal-delay-1">Built for men who want to stop thinking about it.</h2>
+        <p class="section-sub reveal reveal-delay-2">Tadalafix is the right choice for men who want consistent, maintenance-level support without the ritual of on-demand dosing.</p>
       </div>
       <div class="for-who-grid">
         <div class="for-who-card reveal reveal-delay-1">
           <div class="for-who-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 006 0v-4"/><path d="M7 10h10"/><path d="M12 10V3"/><path d="M8 3h8"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <h3>Non-Responders to Standard PDE5 Inhibitors</h3>
-          <p>Men who have tried Viagra, Cialis, or Levitra with limited or inconsistent results. Performaxx combines two PDE5 inhibitors with a central pathway agent for a more complete response.</p>
+          <h3>Men Who Don't Want to Plan</h3>
+          <p>If timing a dose before intimacy feels clinical or disruptive, daily dosing removes that entirely. Take it in the morning and move on with your day.</p>
         </div>
         <div class="for-who-card reveal reveal-delay-2">
           <div class="for-who-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
           </div>
-          <h3>Men Seeking On-Demand Performance</h3>
-          <p>Those who prefer an as-needed treatment that's taken before intimacy, rather than a daily regimen. Performaxx's sublingual delivery supports faster onset than standard oral tablets.</p>
+          <h3>Men in Active Relationships</h3>
+          <p>For men in committed relationships where intimacy happens frequently and spontaneously, daily dosing provides the right kind of always-on support.</p>
         </div>
         <div class="for-who-card reveal reveal-delay-3">
           <div class="for-who-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
           </div>
-          <h3>Men 45+ with Complex ED</h3>
-          <p>Older men whose ED may involve multiple contributing factors: vascular, neurological, and hormonal. Performaxx's multi-mechanistic design addresses several pathways simultaneously.</p>
+          <h3>Men Starting with ED Treatment</h3>
+          <p>Daily low-dose Tadalafil is often recommended as a first-line option for mild to moderate ED. A simple, well-studied starting point before considering more complex formulas.</p>
         </div>
       </div>
     </div>
@@ -1045,65 +678,65 @@
     <div class="testimonials-inner">
       <div class="testimonials-header">
         <span class="section-label reveal">Patient Stories</span>
-        <h2 class="section-heading reveal reveal-delay-1">What Performaxx patients say.</h2>
+        <h2 class="section-heading reveal reveal-delay-1">What Tadalafix patients say.</h2>
       </div>
       <div class="t-carousel">
         <button class="t-arrow t-prev" aria-label="Previous review">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
         <div class="t-track">
-        <div class="testimonials-grid" id="testimonialsGrid">
-        <div class="testimonial-card reveal reveal-delay-1">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">I tried Viagra for years. Within a week on Performaxx I noticed a difference I hadn&#8217;t felt in a long time. My confidence is back.</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face&q=80" alt="Michael T." />
-            <div>
-              <div class="testimonial-name">Michael T.</div>
-              <div class="testimonial-meta">Age 52 &middot; Performaxx&#8482; patient</div>
+          <div class="testimonials-grid" id="testimonialsGrid">
+            <div class="testimonial-card reveal reveal-delay-1">
+              <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-quote">I used to dread the whole ritual of taking a pill and waiting. With Tadalafix I just take it in the morning. It changed everything about how I feel going into the evening.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face&q=80" alt="James T." />
+                <div>
+                  <div class="testimonial-name">James T.</div>
+                  <div class="testimonial-meta">Age 54 &middot; Tadalafix patient</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-2">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">My doctor had me on a single-agent pill that wasn&#8217;t cutting it. Performaxx is a completely different level. The triple formula makes a real difference.</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&crop=face&q=80" alt="Carlos V." />
-            <div>
-              <div class="testimonial-name">Carlos V.</div>
-              <div class="testimonial-meta">Age 49 &middot; Performaxx&#8482; patient</div>
+            <div class="testimonial-card reveal reveal-delay-2">
+              <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-quote">Simple, consistent, effective. My provider started me on 2.5mg and I barely noticed taking it, but the results were clear within the first week. My wife noticed before I did.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&crop=face&q=80" alt="Mark P." />
+                <div>
+                  <div class="testimonial-name">Mark P.</div>
+                  <div class="testimonial-meta">Age 58 &middot; Tadalafix patient</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-3">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">Nothing else worked. Performaxx was the first treatment that gave me consistent results. I wish I had found this sooner.</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&q=80" alt="David K." />
-            <div>
-              <div class="testimonial-name">David K.</div>
-              <div class="testimonial-meta">Age 56 &middot; Performaxx&#8482; patient</div>
+            <div class="testimonial-card reveal reveal-delay-3">
+              <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-quote">I tried on-demand Cialis for years but the timing always felt forced. This is a completely different experience. I don't even think about it anymore and that's the whole point.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&q=80" alt="Thomas R." />
+                <div>
+                  <div class="testimonial-name">Thomas R.</div>
+                  <div class="testimonial-meta">Age 62 &middot; Tadalafix patient</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-3">
-          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="testimonial-quote">I was skeptical about a compound formula but three months in, I&#8217;m a believer. The results are consistent and my partner noticed the difference immediately.</p>
-          <div class="testimonial-author">
-            <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face&q=80" alt="Robert M." />
-            <div>
-              <div class="testimonial-name">Robert M.</div>
-              <div class="testimonial-meta">Age 61 &middot; Performaxx&#8482; patient</div>
+            <div class="testimonial-card reveal reveal-delay-3">
+              <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-quote">The online process was easy and the prescription came through the next day. Three months in and I feel like myself again. No side effects, no hassle. Just works.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face&q=80" alt="Gary M." />
+                <div>
+                  <div class="testimonial-name">Gary M.</div>
+                  <div class="testimonial-meta">Age 49 &middot; Tadalafix patient</div>
+                </div>
+              </div>
             </div>
+          </div><!-- /testimonials-grid -->
+          <div class="t-dots" id="tDots">
+            <button class="t-dot active" aria-label="Review 1"></button>
+            <button class="t-dot" aria-label="Review 2"></button>
+            <button class="t-dot" aria-label="Review 3"></button>
+            <button class="t-dot" aria-label="Review 4"></button>
           </div>
-        </div>
-      </div><!-- /testimonials-grid -->
-        <div class="t-dots" id="tDots">
-          <button class="t-dot active" aria-label="Review 1"></button>
-          <button class="t-dot" aria-label="Review 2"></button>
-          <button class="t-dot" aria-label="Review 3"></button>
-          <button class="t-dot" aria-label="Review 4"></button>
-        </div>
         </div><!-- /t-track -->
         <button class="t-arrow t-next" aria-label="Next review">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
@@ -1120,7 +753,7 @@
     <div class="cta-overlay"></div>
     <div class="cta-content">
       <p class="cta-eyebrow">Get Started Today</p>
-      <h2 class="cta-h2">Ready to try Performaxx?</h2>
+      <h2 class="cta-h2">Ready to stay ready?</h2>
       <p class="cta-sub">Complete a free 2-minute health assessment. A licensed provider reviews your information and issues a prescription if appropriate, typically within 24 hours.</p>
       <div class="cta-buttons">
         <a href="#" class="btn btn-orange btn-lg">Get Started &rarr;</a>
@@ -1133,31 +766,31 @@
   <section class="faq-section" id="faq">
     <div class="faq-inner">
       <span class="section-label reveal">FAQs</span>
-      <h2 class="section-heading reveal reveal-delay-1">Common questions about Performaxx</h2>
+      <h2 class="section-heading reveal reveal-delay-1">Common questions about Tadalafix</h2>
       <div class="faq-list">
 
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger-label">What makes Performaxx different from Viagra or Cialis?</span>
+            <span class="faq-trigger-label">Is Tadalafix the same as Cialis?</span>
             <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
           </button>
-          <div class="faq-body"><div class="faq-body-inner">Viagra and Cialis each use a single PDE5 inhibitor. Performaxx combines two PDE5 inhibitors (Tadalafil and Vardenafil) with Apomorphine, a central dopamine agonist that activates the arousal pathway in the brain, a mechanism that standard ED medications don't address at all. This multi-mechanistic approach is why Performaxx is often effective for men who haven't had success with standard treatments.</div></div>
+          <div class="faq-body"><div class="faq-body-inner">Tadalafil is the same active ingredient found in Cialis. The difference is that Mavrox provides it as a compounded, provider-prescribed formulation with flexible dosing options, all through a fully online process. You get the same clinically proven molecule, without the brand-name price or pharmacy visits.</div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger-label">How fast does Performaxx work?</span>
+            <span class="faq-trigger-label">How long before I see results?</span>
             <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
           </button>
-          <div class="faq-body"><div class="faq-body-inner">Because Performaxx dissolves sublingually (under the tongue), it is absorbed more rapidly than standard oral tablets. Most patients notice effects within 30–60 minutes. We recommend taking it at least 30 minutes before sexual activity. The Tadalafil component provides sustained support for up to 36 hours.</div></div>
+          <div class="faq-body"><div class="faq-body-inner">Unlike on-demand dosing which works within an hour, daily Tadalafil builds up over several days of consistent use. Most patients notice meaningful improvement within 3 to 7 days. Give it at least one full week before evaluating whether your starting dose is right for you.</div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger-label">Is Performaxx FDA-approved?</span>
+            <span class="faq-trigger-label">Can I take a higher dose if needed?</span>
             <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
           </button>
-          <div class="faq-body"><div class="faq-body-inner">Performaxx is a compounded medication and is not FDA-approved as a finished drug product. However, it is compounded by a licensed US pharmacy using FDA-approved active pharmaceutical ingredients. All individual active ingredients (Apomorphine, Tadalafil, and Vardenafil) are individually FDA-approved for related indications.</div></div>
+          <div class="faq-body"><div class="faq-body-inner">Yes. Tadalafix is available in a flex-dose format, with standard daily doses of 2.5–5mg and provider-directed dosing up to 20mg per day. Your provider will recommend the appropriate dose based on your health intake and response. Never exceed your prescribed dose without consulting your provider first.</div></div>
         </div>
 
         <div class="faq-item">
@@ -1165,15 +798,15 @@
             <span class="faq-trigger-label">Do I need a prescription?</span>
             <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
           </button>
-          <div class="faq-body"><div class="faq-body-inner">Yes. Performaxx requires a valid prescription from a licensed US provider. The Mavrox process is fully online. Complete a short health intake, and a licensed provider will review your information and issue a prescription if clinically appropriate, typically within 24 hours. No office visit or video call required.</div></div>
+          <div class="faq-body"><div class="faq-body-inner">Yes. Tadalafix requires a valid prescription from a licensed US provider. The Mavrox process is fully online. Complete a short health intake, and a licensed provider will review your information and issue a prescription if clinically appropriate, typically within 24 hours. No office visit required.</div></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger-label">Are there any side effects?</span>
+            <span class="faq-trigger-label">What if I miss a dose?</span>
             <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
           </button>
-          <div class="faq-body"><div class="faq-body-inner">As with all ED medications, side effects are possible. Common side effects may include headache, flushing, nasal congestion, and mild nausea (associated with Apomorphine). Do not take Performaxx if you use nitrates for chest pain, have severely low blood pressure, or have been advised to avoid sexual activity due to cardiovascular conditions. Your provider will review your health history during the intake process.</div></div>
+          <div class="faq-body"><div class="faq-body-inner">If you miss a dose, take it as soon as you remember, unless it's close to the time of your next scheduled dose. Do not double up. Because Tadalafil has a long half-life, a single missed dose is unlikely to cause a noticeable gap in effectiveness, but consistency is still the best approach for daily regimens.</div></div>
         </div>
 
         <div class="faq-item">
@@ -1181,7 +814,7 @@
             <span class="faq-trigger-label">How is it delivered?</span>
             <div class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
           </button>
-          <div class="faq-body"><div class="faq-body-inner">Performaxx is compounded at a licensed US pharmacy and shipped in plain, unmarked packaging directly to your door, free of charge. There is no pharmacy pickup and no identifying information on the exterior packaging.</div></div>
+          <div class="faq-body"><div class="faq-body-inner">Tadalafix is compounded at a licensed US pharmacy and shipped in plain, unmarked packaging directly to your door, free of charge. There is no pharmacy pickup and no identifying information on the exterior packaging.</div></div>
         </div>
 
       </div>
@@ -1199,8 +832,8 @@
         <div class="footer-col">
           <h4>Treatments</h4>
           <ul>
-            <li><a href="performaxx.html">Performaxx&#8482;</a></li>
-            <li><a href="tadalafil-daily.html">Tadalafil Daily</a></li>
+            <li><a href="performax.html">Performax&#8482;</a></li>
+            <li><a href="tadalafix.html">Tadalafix</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1233,7 +866,7 @@
         <p class="footer-rx">Rx Only <span>&middot;</span> Compounded <span>&middot;</span> Not FDA-Approved</p>
       </div>
       <div class="footer-legal">
-        <p>IMPORTANT SAFETY INFORMATION: Performaxx&#8482; is a prescription-only compounded medication and has not been evaluated or approved by the FDA. Compounded medications are not FDA-approved and are prepared by a licensed compounding pharmacy pursuant to a valid prescription. Performaxx contains Apomorphine 3mg, Tadalafil 20mg, and Vardenafil 15mg. Do not take if you use nitrates for chest pain, have low blood pressure, or have been advised against sexual activity. Do not exceed one dose per 48-hour period. Consult your provider before starting any treatment. Results may vary. Individual results are not guaranteed.</p>
+        <p>IMPORTANT SAFETY INFORMATION: Tadalafix is a prescription-only compounded medication and has not been evaluated or approved by the FDA as a finished drug product. Compounded medications are prepared by a licensed compounding pharmacy pursuant to a valid prescription. Do not take if you use nitrates for chest pain, have low blood pressure, or have been advised against sexual activity. Do not exceed your prescribed dose. Consult your provider before starting any treatment. Results may vary. Individual results are not guaranteed.</p>
       </div>
     </div>
   </footer>
@@ -1248,10 +881,7 @@
         thumb.addEventListener('click', function() {
           var src = thumb.getAttribute('data-src');
           mainImg.style.opacity = '0';
-          setTimeout(function() {
-            mainImg.src = src;
-            mainImg.style.opacity = '1';
-          }, 200);
+          setTimeout(function() { mainImg.src = src; mainImg.style.opacity = '1'; }, 200);
           thumbs.forEach(function(t) { t.classList.remove('active'); });
           thumb.classList.add('active');
         });
@@ -1281,10 +911,7 @@
     (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
@@ -1366,9 +993,7 @@
 
       function goTo(n) {
         current = ((n % total) + total) % total;
-        if (isMobile()) {
-          grid.style.transform = 'translateX(' + (-current * 100) + '%)';
-        }
+        if (isMobile()) { grid.style.transform = 'translateX(' + (-current * 100) + '%)'; }
         dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
       }
 
@@ -1376,7 +1001,6 @@
       if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
       dots.forEach(function(dot, i) { dot.addEventListener('click', function() { goTo(i); }); });
 
-      // Touch swipe support
       var startX = 0;
       grid.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
       grid.addEventListener('touchend', function(e) {
@@ -1385,10 +1009,8 @@
         if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
       }, { passive: true });
 
-      // Reset on resize
       window.addEventListener('resize', function() {
-        if (!isMobile()) { grid.style.transform = ''; }
-        else { goTo(current); }
+        if (!isMobile()) { grid.style.transform = ''; } else { goTo(current); }
       });
     })();
 
