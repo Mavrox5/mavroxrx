@@ -4,30 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MAVROX — Provider-Prescribed ED Treatment</title>
-  <meta name="description" content="Board-certified physicians. Proven ED formulas. Discreet delivery to your door. Performaxx™ triple-agent sublingual tablet and Tadalafil Daily — prescription treatment for men 45+." />
+  <meta name="description" content="Board-certified physicians. Proven ED formulas. Discreet delivery to your door. Performax™ triple-agent sublingual tablet and Tadalafix — prescription treatment for men 45+." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #F8F4EE;
-      --bg2: #F0EBE2;
-      --black: #0F0E0D;
-      --text: #1C1917;
+      --bg: #F0ECE3;
+      --bg2: #E8E4DB;
+      --black: #1C1A19;
+      --text: #1C1A19;
       --muted: #6B6460;
       --border: rgba(28,25,23,0.09);
-      --orange: #C94B1A;
-      --orange2: #E05E28;
-      --blue: #2A6496;
+      --orange: #C94B19;
+      --orange2: #D45A25;
+      --blue: #2C4581;
+      --navy: #20293E;
+      --cobalt: #2C4581;
       --nav-h: 60px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Archivo', sans-serif;
       background: var(--bg);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
@@ -49,7 +51,7 @@
     }
 
     /* TYPOGRAPHY */
-    h1, h2, h3, h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+    h1, h2, h3, h4 { font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif; font-weight: 700; line-height: 1.05; letter-spacing: 0.02em; text-transform: uppercase; }
     p { line-height: 1.65; }
     a { text-decoration: none; color: inherit; }
 
@@ -58,12 +60,12 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Archivo', sans-serif;
       font-size: 0.875rem;
       font-weight: 500;
       letter-spacing: 0.01em;
       padding: 12px 24px;
-      border-radius: 100px;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -86,22 +88,32 @@
       border: 1.5px solid var(--border);
     }
     .btn-ghost-dark:hover { border-color: rgba(28,25,23,0.3); }
-    .btn-black {
-      background: var(--black);
+    .btn-navy {
+      background: var(--navy);
       color: #fff;
       width: 100%;
       justify-content: center;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 0.9rem;
       padding: 14px 24px;
     }
-    .btn-black:hover { background: #2a2826; transform: translateY(-1px); }
+    .btn-navy:hover { background: #2C3347; transform: translateY(-1px); }
+    .btn-black {
+      background: var(--navy);
+      color: #fff;
+      width: 100%;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      padding: 14px 24px;
+    }
+    .btn-black:hover { background: #2C3347; transform: translateY(-1px); }
     .btn-white-solid {
       background: #fff;
       color: var(--black);
       font-weight: 600;
     }
-    .btn-white-solid:hover { background: #f0ebe2; transform: translateY(-1px); }
+    .btn-white-solid:hover { background: #E8E4DB; transform: translateY(-1px); }
 
     /* SCROLL REVEAL */
     .reveal {
@@ -125,7 +137,7 @@
       top: 0;
       z-index: 100;
       height: var(--nav-h);
-      background: rgba(248,244,238,0.92);
+      background: rgba(240,236,227,0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -197,7 +209,7 @@
       top: var(--nav-h);
       left: 0;
       right: 0;
-      background: rgba(248,244,238,0.97);
+      background: rgba(240,236,227,0.97);
       backdrop-filter: blur(16px);
       padding: 1.5rem 2rem 2rem;
       flex-direction: column;
@@ -217,7 +229,7 @@
 
     /* ===================== HERO ===================== */
     .hero {
-      background: var(--black);
+      background: var(--navy);
       height: 800px;
       display: grid;
       grid-template-columns: 55% 45%;
@@ -239,7 +251,7 @@
       right: -120px;
       width: 180px;
       height: 100%;
-      background: linear-gradient(to right, var(--black) 0%, transparent 100%);
+      background: linear-gradient(to right, var(--navy) 0%, transparent 100%);
       z-index: 3;
       pointer-events: none;
     }
@@ -263,8 +275,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(15,14,13,0.5) 0%, transparent 50%),
-                  linear-gradient(to top, rgba(15,14,13,0.4) 0%, transparent 40%);
+      background: linear-gradient(to right, rgba(32,41,62,0.5) 0%, transparent 50%),
+                  linear-gradient(to top, rgba(32,41,62,0.4) 0%, transparent 40%);
       z-index: 1;
     }
 
@@ -354,7 +366,7 @@
 
     /* ===================== TRUST BAR ===================== */
     .trust-bar {
-      background: var(--black);
+      background: var(--navy);
       overflow: hidden;
       border-top: 1px solid rgba(255,255,255,0.06);
       border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -372,11 +384,11 @@
     }
     .trust-bar::before {
       left: 0;
-      background: linear-gradient(to right, var(--black), transparent);
+      background: linear-gradient(to right, var(--navy), transparent);
     }
     .trust-bar::after {
       right: 0;
-      background: linear-gradient(to left, var(--black), transparent);
+      background: linear-gradient(to left, var(--navy), transparent);
     }
     .trust-track {
       display: flex;
@@ -439,10 +451,10 @@
       gap: 2rem;
     }
     .product-card {
-      border: 1px solid var(--border);
-      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
       overflow: hidden;
-      background: #fff;
+      background: var(--navy);
       box-shadow: 0 2px 16px rgba(28,25,23,0.06);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -476,16 +488,16 @@
       border-radius: 100px;
       margin-bottom: 1.1rem;
     }
-    .card-tag-orange { background: rgba(201,75,26,0.1); color: var(--orange); }
-    .card-tag-blue { background: rgba(42,100,150,0.1); color: var(--blue); }
+    .card-tag-orange { background: rgba(201,75,25,0.2); color: #E8845A; }
+    .card-tag-blue { background: rgba(44,69,129,0.3); color: #7B9FD4; }
     .card-name {
       font-size: 1.85rem;
       margin-bottom: 0.4rem;
-      color: var(--text);
+      color: #fff;
     }
     .card-desc {
       font-size: 1.05rem;
-      color: var(--muted);
+      color: rgba(255,255,255,0.6);
       margin-bottom: 1.5rem;
       line-height: 1.6;
     }
@@ -498,9 +510,9 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 1rem;
-      color: var(--text);
+      color: rgba(255,255,255,0.8);
       padding: 0.45rem 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       line-height: 1.5;
     }
     .card-benefits li:last-child { border-bottom: none; }
@@ -508,27 +520,27 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: rgba(201,75,26,0.1);
+      background: rgba(201,75,25,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .check-icon-blue { background: rgba(42,100,150,0.1); }
+    .check-icon-blue { background: rgba(44,69,129,0.3); }
     .check-icon svg { color: var(--orange); }
-    .check-icon-blue svg { color: var(--blue); }
+    .check-icon-blue svg { color: #7B9FD4; }
     .card-price {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif;
       font-size: 1.1rem;
-      color: var(--text);
+      color: #fff;
       margin-bottom: 1rem;
     }
-    .card-price span { font-family: 'Barlow', sans-serif; font-size: 0.8rem; color: var(--muted); }
+    .card-price span { font-family: 'Archivo', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
     /* ===================== LIFESTYLE SPLIT ===================== */
     .lifestyle {
-      background: var(--black);
+      background: var(--navy);
       display: grid;
       grid-template-columns: 1fr 1fr;
       height: 800px;
@@ -579,7 +591,7 @@
       padding: 1.25rem;
     }
     .stat-number {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif;
       font-size: 2.5rem;
       color: var(--orange2);
       line-height: 1;
@@ -615,7 +627,7 @@
       padding: 2.25rem 2rem;
     }
     .step-number {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif;
       font-size: 3.5rem;
       line-height: 1;
       margin-bottom: 1.25rem;
@@ -625,7 +637,7 @@
       width: 44px;
       height: 44px;
       background: rgba(201,75,26,0.1);
-      border-radius: 12px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -633,7 +645,7 @@
     }
     .step-icon svg { color: var(--orange); }
     .step-title {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif;
       font-size: 1.4rem;
       margin-bottom: 0.6rem;
       color: var(--text);
@@ -768,7 +780,7 @@
       height: 460px;
     }
     .brand-img-wrap {
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
     }
     .brand-img-wrap img {
@@ -803,7 +815,7 @@
     .cta-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(15,14,13,0.88) 0%, rgba(15,14,13,0.55) 50%, rgba(15,14,13,0.25) 100%);
+      background: linear-gradient(to right, rgba(32,41,62,0.88) 0%, rgba(32,41,62,0.55) 50%, rgba(32,41,62,0.25) 100%);
       z-index: 1;
     }
     .cta-content {
@@ -874,7 +886,7 @@
       gap: 1rem;
     }
     .faq-trigger-label {
-      font-family: 'Barlow Condensed', sans-serif;
+      font-family: 'Roc Grotesk Wide', 'Archivo', sans-serif;
       font-size: 1.35rem;
       color: var(--text);
     }
@@ -904,7 +916,7 @@
 
     /* ===================== FOOTER ===================== */
     .footer {
-      background: var(--black);
+      background: var(--navy);
       padding: 4rem 2.5rem 2rem;
       border-top: 1px solid rgba(255,255,255,0.06);
     }
@@ -928,7 +940,7 @@
       max-width: 220px;
     }
     .footer-col h4 {
-      font-family: 'Barlow', sans-serif;
+      font-family: 'Archivo', sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.12em;
@@ -1071,8 +1083,8 @@
         <img src="Logo/Mavrox-1.png" alt="MAVROX" />
       </a>
       <ul class="nav-links">
-        <li><a href="performaxx.html">Performaxx</a></li>
-        <li><a href="tadalafil-daily.html">Tadalafil Daily</a></li>
+        <li><a href="performax.html">Performax</a></li>
+        <li><a href="tadalafix.html">Tadalafix</a></li>
       </ul>
       <div class="nav-actions">
         <a href="#" class="btn btn-ghost-dark">Sign In</a>
@@ -1088,8 +1100,8 @@
 
   <!-- Mobile menu -->
   <div class="nav-mobile" id="navMobile" aria-hidden="true">
-    <a href="performaxx.html">Performaxx</a>
-    <a href="tadalafil-daily.html">Tadalafil Daily</a>
+    <a href="performax.html">Performax</a>
+    <a href="tadalafix.html">Tadalafix</a>
     <a href="#" class="btn btn-ghost-dark" style="margin-top:1.25rem;width:100%;justify-content:center;">Sign In</a>
     <a href="#treatments" class="btn btn-orange" style="width:100%;justify-content:center;">Get Started</a>
   </div>
@@ -1186,14 +1198,14 @@
       <p class="section-sub reveal reveal-delay-2">Both provider-prescribed. Both proven. Pick the one that fits your life.</p>
       <div class="treatments-grid">
 
-        <!-- Card 1: Performaxx -->
+        <!-- Card 1: Performax -->
         <div class="product-card reveal reveal-delay-1">
           <div class="card-image">
-            <img src="Images/andrej-lisakov-c8EWOq3wX5s-unsplash.jpg" alt="Performaxx — intimate couple in red light" />
+            <img src="Images/andrej-lisakov-c8EWOq3wX5s-unsplash.jpg" alt="Performax — intimate couple in red light" />
           </div>
           <div class="card-body">
             <span class="card-tag card-tag-orange">Triple-Agent Formula</span>
-            <h3 class="card-name">Performaxx&#8482;</h3>
+            <h3 class="card-name">Performax&#8482;</h3>
             <p class="card-desc">For men who need more than the standard pill</p>
             <ul class="card-benefits">
               <li>
@@ -1222,18 +1234,18 @@
               </li>
             </ul>
             <p class="card-price">From $89/mo <span>&middot; Prescription required</span></p>
-            <a href="#" class="btn btn-black">Start Assessment &#8594;</a>
+            <a href="#" class="btn btn-orange" style="width:100%;justify-content:center;border-radius:8px;padding:14px 24px;font-size:0.9rem;">Get started &#8594;</a>
           </div>
         </div>
 
-        <!-- Card 2: Tadalafil Daily -->
+        <!-- Card 2: Tadalafix -->
         <div class="product-card reveal reveal-delay-2">
           <div class="card-image">
-            <img src="Images/curated-lifestyle-5tA3gPSm5CI-unsplash.jpg" alt="Tadalafil Daily — man in white robe, relaxed morning" />
+            <img src="Images/curated-lifestyle-5tA3gPSm5CI-unsplash.jpg" alt="Tadalafix — man in white robe, relaxed morning" />
           </div>
           <div class="card-body">
             <span class="card-tag card-tag-blue">Daily Low-Dose</span>
-            <h3 class="card-name">Tadalafil Daily</h3>
+            <h3 class="card-name">Tadalafix</h3>
             <p class="card-desc">Always ready. No timing required.</p>
             <ul class="card-benefits">
               <li>
@@ -1262,7 +1274,7 @@
               </li>
             </ul>
             <p class="card-price">From $49/mo <span>&middot; Prescription required</span></p>
-            <a href="#" class="btn btn-black">Start Assessment &#8594;</a>
+            <a href="#" class="btn btn-orange" style="width:100%;justify-content:center;border-radius:8px;padding:14px 24px;font-size:0.9rem;">Get started &#8594;</a>
           </div>
         </div>
 
@@ -1304,36 +1316,36 @@
 
           <div class="testimonial-card">
             <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">I tried Viagra for years. Within a week on Performaxx I noticed a difference I hadn&#8217;t felt in a long time. My confidence is back.</p>
+            <p class="testimonial-quote">I tried Viagra for years. Within a week on Performax I noticed a difference I hadn&#8217;t felt in a long time. My confidence is back.</p>
             <div class="testimonial-author">
               <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face&q=80" alt="Michael T." />
               <div>
                 <div class="testimonial-name">Michael T.</div>
-                <div class="testimonial-meta">Age 52 &middot; Performaxx&#8482; patient</div>
+                <div class="testimonial-meta">Age 52 &middot; Performax&#8482; patient</div>
               </div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">Tadalafil Daily changed everything. I stopped thinking about timing and started enjoying life again.</p>
+            <p class="testimonial-quote">Tadalafix changed everything. I stopped thinking about timing and started enjoying life again.</p>
             <div class="testimonial-author">
               <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face&q=80" alt="James R." />
               <div>
                 <div class="testimonial-name">James R.</div>
-                <div class="testimonial-meta">Age 47 &middot; Tadalafil Daily patient</div>
+                <div class="testimonial-meta">Age 47 &middot; Tadalafix patient</div>
               </div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">Nothing else worked. Performaxx was the first treatment that gave me consistent results. I wish I had found this sooner.</p>
+            <p class="testimonial-quote">Nothing else worked. Performax was the first treatment that gave me consistent results. I wish I had found this sooner.</p>
             <div class="testimonial-author">
               <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&q=80" alt="David K." />
               <div>
                 <div class="testimonial-name">David K.</div>
-                <div class="testimonial-meta">Age 56 &middot; Performaxx&#8482; patient</div>
+                <div class="testimonial-meta">Age 56 &middot; Performax&#8482; patient</div>
               </div>
             </div>
           </div>
@@ -1345,19 +1357,19 @@
               <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face&q=80" alt="Robert M." />
               <div>
                 <div class="testimonial-name">Robert M.</div>
-                <div class="testimonial-meta">Age 61 &middot; Tadalafil Daily patient</div>
+                <div class="testimonial-meta">Age 61 &middot; Tadalafix patient</div>
               </div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">My doctor had me on a single-agent pill that wasn&#8217;t cutting it. Performaxx is a completely different level. The triple formula makes a real difference.</p>
+            <p class="testimonial-quote">My doctor had me on a single-agent pill that wasn&#8217;t cutting it. Performax is a completely different level. The triple formula makes a real difference.</p>
             <div class="testimonial-author">
               <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop&crop=face&q=80" alt="Carlos V." />
               <div>
                 <div class="testimonial-name">Carlos V.</div>
-                <div class="testimonial-meta">Age 49 &middot; Performaxx&#8482; patient</div>
+                <div class="testimonial-meta">Age 49 &middot; Performax&#8482; patient</div>
               </div>
             </div>
           </div>
@@ -1369,19 +1381,19 @@
               <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=80&h=80&fit=crop&crop=face&q=80" alt="Thomas B." />
               <div>
                 <div class="testimonial-name">Thomas B.</div>
-                <div class="testimonial-meta">Age 54 &middot; Tadalafil Daily patient</div>
+                <div class="testimonial-meta">Age 54 &middot; Tadalafix patient</div>
               </div>
             </div>
           </div>
 
           <div class="testimonial-card">
             <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p class="testimonial-quote">I&#8217;ve been on Performaxx for three months now. The sublingual format works fast and the results are consistent. This is exactly what I needed.</p>
+            <p class="testimonial-quote">I&#8217;ve been on Performax for three months now. The sublingual format works fast and the results are consistent. This is exactly what I needed.</p>
             <div class="testimonial-author">
               <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1582896911227-cdce90a18f63?w=80&h=80&fit=crop&crop=face&q=80" alt="Alan F." />
               <div>
                 <div class="testimonial-name">Alan F.</div>
-                <div class="testimonial-meta">Age 58 &middot; Performaxx&#8482; patient</div>
+                <div class="testimonial-meta">Age 58 &middot; Performax&#8482; patient</div>
               </div>
             </div>
           </div>
@@ -1399,7 +1411,7 @@
         <span class="section-label reveal">Our Mission</span>
         <h2 class="brand-h2 reveal reveal-delay-1">Built for the men everyone else left behind.</h2>
         <p class="brand-body reveal reveal-delay-2">ED has been undertreated for decades. Most men either avoid the conversation or settle for medications that partially work. Mavrox was founded on one principle: men deserve better.</p>
-        <p class="brand-body reveal reveal-delay-3">Our clinical team designs formulations for the men who need more &#8212; not the average case. Performaxx and Tadalafil Daily are the result of that commitment.</p>
+        <p class="brand-body reveal reveal-delay-3">Our clinical team designs formulations for the men who need more &#8212; not the average case. Performax and Tadalafix are the result of that commitment.</p>
         <a href="#" class="brand-link reveal reveal-delay-4">
           Read our story
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1487,25 +1499,25 @@
 
         <div class="faq-item reveal">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger-label">What is Performaxx&#8482; and how is it different?</span>
+            <span class="faq-trigger-label">What is Performax&#8482; and how is it different?</span>
             <span class="faq-icon" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">Performaxx&#8482; is a triple-agent sublingual tablet combining Apomorphine 3mg, Tadalafil 20mg, and Vardenafil 15mg. Unlike standard ED pills that use a single mechanism, Performaxx activates both the central arousal pathway and dual PDE5 inhibition simultaneously. It&#8217;s designed for men who haven&#8217;t had consistent success with standard single-agent treatments.</div>
+            <div class="faq-body-inner">Performax&#8482; is a triple-agent sublingual tablet combining Apomorphine 3mg, Tadalafil 20mg, and Vardenafil 15mg. Unlike standard ED pills that use a single mechanism, Performax activates both the central arousal pathway and dual PDE5 inhibition simultaneously. It&#8217;s designed for men who haven&#8217;t had consistent success with standard single-agent treatments.</div>
           </div>
         </div>
 
         <div class="faq-item reveal reveal-delay-1">
           <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-trigger-label">How does Tadalafil Daily work?</span>
+            <span class="faq-trigger-label">How does Tadalafix work?</span>
             <span class="faq-icon" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </button>
           <div class="faq-body">
-            <div class="faq-body-inner">Tadalafil Daily (5mg) is taken once every day at the same time. Because the dose stays consistent in your system, there&#8217;s no need to plan around timing. You&#8217;re simply always ready. It&#8217;s ideal for men who find on-demand dosing inconvenient or who want a more spontaneous experience.</div>
+            <div class="faq-body-inner">Tadalafix (5mg) is taken once every day at the same time. Because the dose stays consistent in your system, there&#8217;s no need to plan around timing. You&#8217;re simply always ready. It&#8217;s ideal for men who find on-demand dosing inconvenient or who want a more spontaneous experience.</div>
           </div>
         </div>
 
@@ -1560,8 +1572,8 @@
         <div class="footer-col">
           <h4>Treatments</h4>
           <ul>
-            <li><a href="#">Performaxx&#8482;</a></li>
-            <li><a href="#">Tadalafil Daily</a></li>
+            <li><a href="#">Performax&#8482;</a></li>
+            <li><a href="#">Tadalafix</a></li>
             <li><a href="#">Compare Treatments</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
           </ul>
@@ -1605,7 +1617,7 @@
         </p>
       </div>
       <div class="footer-legal">
-        <p>IMPORTANT SAFETY INFORMATION: Mavrox treatments are prescription-only compounded medications and have not been evaluated or approved by the FDA. Compounded medications are not FDA-approved and are prepared by a licensed compounding pharmacy pursuant to a valid prescription. These products may differ from FDA-approved medications in terms of safety, effectiveness, and quality. Performaxx&#8482; contains Apomorphine, Tadalafil, and Vardenafil. Tadalafil Daily contains Tadalafil 5mg. Do not take ED medications if you use nitrates for chest pain, have low blood pressure, or have been advised against sexual activity. Consult your physician before starting any treatment. Results may vary. This website is not a substitute for professional medical advice. Individual results may vary. Testimonials are representative of typical patient experiences and do not guarantee equivalent outcomes.</p>
+        <p>IMPORTANT SAFETY INFORMATION: Mavrox treatments are prescription-only compounded medications and have not been evaluated or approved by the FDA. Compounded medications are not FDA-approved and are prepared by a licensed compounding pharmacy pursuant to a valid prescription. These products may differ from FDA-approved medications in terms of safety, effectiveness, and quality. Performax&#8482; contains Apomorphine, Tadalafil, and Vardenafil. Tadalafix contains Tadalafil 5mg. Do not take ED medications if you use nitrates for chest pain, have low blood pressure, or have been advised against sexual activity. Consult your physician before starting any treatment. Results may vary. This website is not a substitute for professional medical advice. Individual results may vary. Testimonials are representative of typical patient experiences and do not guarantee equivalent outcomes.</p>
       </div>
     </div>
   </footer>
