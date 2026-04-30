@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | MAVROX</title>
+  <meta name="description" content="Mavrox Privacy Policy, HIPAA Notice of Privacy Practices, and Telehealth Informed Consent." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F8F4EE;
+      --bg2: #F0EBE2;
+      --black: #0F0E0D;
+      --text: #1C1917;
+      --muted: #6B6460;
+      --border: rgba(28,25,23,0.09);
+      --orange: #C94B1A;
+      --orange2: #E05E28;
+      --nav-h: 60px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; line-height: 1.05; }
+    p { line-height: 1.65; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===================== BUTTONS ===================== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.01em;
+      padding: 12px 24px; border-radius: 100px;
+      border: none; cursor: pointer; transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-orange { background: var(--orange); color: #fff; }
+    .btn-orange:hover { background: var(--orange2); transform: translateY(-1px); }
+    .btn-ghost-dark { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+    .btn-ghost-dark:hover { border-color: rgba(28,25,23,0.3); }
+
+    /* ===================== NAV ===================== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h); z-index: 100;
+      background: rgba(248,244,238,0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; height: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+    }
+    .nav-logo img { height: 22px; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text); opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--orange); }
+    .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 4px; flex-shrink: 0;
+    }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .nav-mobile {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(248,244,238,0.97);
+      backdrop-filter: blur(16px);
+      padding: 1.5rem 2rem 2rem;
+      flex-direction: column; gap: 0; z-index: 99;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { padding: 0.85rem 0; font-size: 1rem; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
+    .nav-mobile .btn { margin-top: 1.25rem; width: 100%; justify-content: center; }
+
+    /* ===================== LEGAL HERO ===================== */
+    .legal-hero {
+      padding-top: calc(var(--nav-h) + 5rem);
+      padding-bottom: 3.5rem;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-hero-inner { max-width: 1200px; margin: 0 auto; }
+    .legal-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1.25rem;
+    }
+    .legal-hero-eyebrow::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--orange);
+    }
+    .legal-hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      max-width: 900px;
+    }
+    .legal-hero-lede {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .legal-hero-meta {
+      display: flex; flex-wrap: wrap;
+      gap: 0.85rem 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      max-width: 720px;
+    }
+    .legal-meta-item {
+      display: flex; align-items: center; gap: 0.55rem;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    .legal-meta-item svg { color: var(--orange); flex-shrink: 0; }
+    .legal-meta-item strong { color: var(--text); font-weight: 600; }
+
+    /* ===================== LEGAL BODY ===================== */
+    .legal-body { padding: 4rem 2.5rem 5rem; }
+    .legal-body-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* TOC */
+    .legal-toc {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+      align-self: start;
+      max-height: calc(100vh - var(--nav-h) - 4rem);
+      overflow-y: auto;
+      padding-right: 0.75rem;
+    }
+    .legal-toc::-webkit-scrollbar { width: 4px; }
+    .legal-toc::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .legal-toc-label {
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-toc-list { list-style: none; display: flex; flex-direction: column; }
+    .legal-toc-list a {
+      display: block;
+      padding: 0.5rem 0 0.5rem 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-left: 2px solid transparent;
+      margin-left: -2px;
+      transition: color 0.2s, border-color 0.2s;
+      line-height: 1.4;
+    }
+    .legal-toc-list a:hover { color: var(--text); }
+    .legal-toc-list a.active {
+      color: var(--orange);
+      border-left-color: var(--orange);
+      font-weight: 500;
+    }
+    .legal-toc-section {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-top: 1.25rem;
+      margin-bottom: 0.35rem;
+      padding-left: 1rem;
+    }
+    .legal-toc-section:first-child { margin-top: 0; }
+
+    /* Content */
+    .legal-content { max-width: 720px; min-width: 0; }
+    .legal-content > section {
+      margin-bottom: 4rem;
+      scroll-margin-top: calc(var(--nav-h) + 2rem);
+    }
+    .legal-content > section:last-child { margin-bottom: 0; }
+
+    .legal-section-tag {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.85rem;
+    }
+
+    .legal-content h2 {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: -0.005em;
+    }
+    .legal-content h3 {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-top: 2.5rem;
+      margin-bottom: 0.85rem;
+    }
+    .legal-content h4 {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--text);
+      margin-top: 1.75rem; margin-bottom: 0.4rem;
+    }
+    .legal-content p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1.1rem;
+    }
+    .legal-content p strong { color: var(--text); font-weight: 600; }
+    .legal-content p em { color: var(--text); font-style: italic; }
+    .legal-content a {
+      color: var(--orange);
+      border-bottom: 1px solid rgba(201,75,26,0.25);
+      transition: border-color 0.2s;
+    }
+    .legal-content a:hover { border-bottom-color: var(--orange); }
+
+    .legal-content ul, .legal-content ol { margin: 0 0 1.4rem 0; padding: 0; }
+    .legal-content ul { list-style: none; }
+    .legal-content ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+    .legal-content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.65rem;
+      width: 6px; height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+    .legal-content ol {
+      counter-reset: item;
+      list-style: none;
+    }
+    .legal-content ol li {
+      counter-increment: item;
+      position: relative;
+      padding-left: 2.25rem;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 0.65rem;
+    }
+    .legal-content ol li::before {
+      content: counter(item, decimal-leading-zero);
+      position: absolute;
+      left: 0; top: 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      color: var(--orange);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* Callouts */
+    .legal-callout {
+      background: rgba(201,75,26,0.07);
+      border: 1px solid rgba(201,75,26,0.2);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 1.75rem 0;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .legal-callout > svg {
+      color: var(--orange); flex-shrink: 0; margin-top: 2px;
+    }
+    .legal-callout-content { flex: 1; min-width: 0; }
+    .legal-callout-content p { color: var(--text); margin: 0; font-size: 0.95rem; line-height: 1.65; }
+    .legal-callout-content p + p { margin-top: 0.6rem; }
+    .legal-callout-content strong { color: var(--text); }
+
+    .legal-info-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 1.5rem 0;
+    }
+    .legal-info-box h4 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--text);
+    }
+    .legal-info-box p { font-size: 0.95rem; }
+    .legal-info-box p:last-child { margin-bottom: 0; }
+
+    /* Contact card */
+    .legal-contact {
+      background: var(--black);
+      color: #fff;
+      border-radius: 18px;
+      padding: 2rem 2.25rem;
+      margin: 2rem 0;
+    }
+    .legal-contact .legal-section-tag { color: rgba(255,255,255,0.5); }
+    .legal-contact h3 {
+      color: #fff;
+      margin-top: 0;
+      font-size: 1.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .legal-contact p { color: rgba(255,255,255,0.65); font-size: 0.95rem; }
+    .legal-contact a {
+      color: var(--orange2);
+      border-bottom: 1px solid rgba(224,94,40,0.4);
+    }
+
+    /* ===================== FOOTER ===================== */
+    .footer { background: var(--black); padding: 4rem 2.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 2rem; }
+    .footer-brand img { height: 20px; display: block; margin-bottom: 1rem; }
+    .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.35); line-height: 1.6; max-width: 220px; }
+    .footer-col h4 { font-family: 'Barlow', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 1.25rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.65rem; }
+    .footer-col ul li a { font-size: 0.875rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.85); }
+    .footer-bottom { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.25); }
+    .footer-rx { font-size: 0.78rem; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
+    .footer-rx span { margin: 0 8px; opacity: 0.4; }
+    .footer-legal { width: 100%; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.73rem; color: rgba(255,255,255,0.2); line-height: 1.65; }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 1.75rem; right: 1.75rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--text); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: none;
+      opacity: 0; pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.25s, transform 0.25s, background 0.2s;
+      z-index: 50;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .back-to-top:hover { background: var(--orange); }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 960px) {
+      .legal-body-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .legal-toc {
+        position: static; max-height: none;
+        padding: 1.25rem 1.5rem;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+      }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-actions .btn-ghost-dark { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-inner {
+        display: grid;
+        grid-template-columns: 44px 1fr 44px;
+        padding: 0 1rem;
+        gap: 0.5rem;
+      }
+      .nav-hamburger { grid-column: 1; justify-self: start; align-self: center; }
+      .nav-logo { grid-column: 2; display: flex; justify-content: center; align-items: center; }
+      .nav-logo img { height: 16px; }
+      .nav-actions { grid-column: 3; justify-self: end; align-self: center; }
+      .nav-actions .btn-orange { padding: 7px 14px; font-size: 0.78rem; }
+
+      .legal-hero { padding: calc(var(--nav-h) + 3rem) 1.25rem 2.5rem; }
+      .legal-body { padding: 3rem 1.25rem 4rem; }
+      .legal-content h2 { font-size: 1.85rem; }
+      .legal-content h3 { font-size: 1.25rem; }
+      .legal-callout { padding: 1.25rem; flex-direction: row; }
+      .legal-info-box, .legal-contact { padding: 1.25rem; }
+
+      .footer { padding: 3rem 1.25rem 1.5rem; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; gap: 0.75rem; }
+
+      .back-to-top { bottom: 1rem; right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="nav-logo" aria-label="Mavrox home">
+        <img src="Logo/Mavrox-1.png" alt="MAVROX" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="performax.html">Performax</a></li>
+        <li><a href="tadalafix.html">Tadalafix</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost-dark">Sign In</a>
+        <a href="https://app.wizlo.com/form-submission?token=$2b$12$wsRqPdfiNtThMnKM8bPW1uJAvT3d.4qrIsqPF0qKYfvJh09jgtFRK" class="btn btn-orange">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <a href="performax.html">Performax</a>
+    <a href="tadalafix.html">Tadalafix</a>
+    <a href="#" class="btn btn-ghost-dark">Sign In</a>
+    <a href="https://app.wizlo.com/form-submission?token=$2b$12$wsRqPdfiNtThMnKM8bPW1uJAvT3d.4qrIsqPF0qKYfvJh09jgtFRK" class="btn btn-orange">Get Started</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <header class="legal-hero">
+    <div class="legal-hero-inner">
+      <div class="legal-hero-eyebrow">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="legal-hero-lede">This notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully.</p>
+      <div class="legal-hero-meta">
+        <span class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <strong>Effective:</strong>&nbsp;March 22, 2026
+        </span>
+        <span class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong>Reading time:</strong>&nbsp;~12 min
+        </span>
+        <span class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <strong>HIPAA-aligned</strong>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BODY ===== -->
+  <main class="legal-body">
+    <div class="legal-body-inner">
+
+      <!-- TOC -->
+      <aside class="legal-toc" aria-label="On this page">
+        <div class="legal-toc-label">On this page</div>
+        <div class="legal-toc-section">Privacy Policy</div>
+        <ul class="legal-toc-list" id="toc">
+          <li><a href="#information">1. What We Do With Your Information</a></li>
+          <li><a href="#consent">2. Consent</a></li>
+          <li><a href="#disclosure">3. Disclosure</a></li>
+          <li><a href="#third-party">4. Third-Party Services</a></li>
+          <li><a href="#security">5. Security</a></li>
+          <li><a href="#age">6. Age of Consent</a></li>
+          <li><a href="#changes">7. Changes to This Policy</a></li>
+        </ul>
+        <div class="legal-toc-section">HIPAA Notice</div>
+        <ul class="legal-toc-list">
+          <li><a href="#your-rights">Your Rights</a></li>
+          <li><a href="#your-choices">Your Choices</a></li>
+          <li><a href="#our-uses">Our Uses &amp; Disclosures</a></li>
+          <li><a href="#additional-privacy">Additional Privacy Options</a></li>
+          <li><a href="#our-responsibilities">Our Responsibilities</a></li>
+        </ul>
+        <div class="legal-toc-section">Telehealth</div>
+        <ul class="legal-toc-list">
+          <li><a href="#telehealth-consent">Telehealth Informed Consent</a></li>
+          <li><a href="#telehealth-terms">Treatment Terms</a></li>
+        </ul>
+      </aside>
+
+      <!-- CONTENT -->
+      <article class="legal-content">
+
+        <!-- ============ PRIVACY POLICY ============ -->
+        <section id="information">
+          <span class="legal-section-tag">Section 01</span>
+          <h2>What We Do With Your Information</h2>
+          <p>When you purchase something from Mavrox, as part of the buying and selling process, we collect the personal information you give us such as your name, address, and email address.</p>
+          <p>When you browse our store, we also automatically receive your computer's internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.</p>
+          <h3>Email Marketing (if applicable)</h3>
+          <p>With your permission, we may send you emails about our store, new products, and other updates.</p>
+        </section>
+
+        <section id="consent">
+          <span class="legal-section-tag">Section 02</span>
+          <h2>Consent</h2>
+          <h3>How do you get my consent?</h3>
+          <p>When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery, or return a purchase, we infer that you consent to our collecting it and using it for that specific reason only. If we ask for your personal information for a secondary reason — like marketing — we will either ask you directly for your expressed consent or provide you with an opportunity to say no.</p>
+          <h3>How do I withdraw my consent?</h3>
+          <p>You may withdraw your consent at any time by contacting us at <a href="mailto:support@tryMavrox.com">support@tryMavrox.com</a>.</p>
+        </section>
+
+        <section id="disclosure">
+          <span class="legal-section-tag">Section 03</span>
+          <h2>Disclosure</h2>
+          <p>We may disclose your personal information if:</p>
+          <ul>
+            <li>We are required by law to do so.</li>
+            <li>You violate our terms of service.</li>
+          </ul>
+        </section>
+
+        <section id="third-party">
+          <span class="legal-section-tag">Section 04</span>
+          <h2>Third-Party Services</h2>
+          <p>In general, the third-party providers used by us will only collect, use, and disclose your information to the extent necessary to allow them to perform the services they provide to us. However, some third-party service providers — like payment gateways — have their own privacy policies regarding the information we are required to provide to them for purchase-related transactions.</p>
+          <p>We recommend that you:</p>
+          <ul>
+            <li>Read their privacy policies to understand how your personal information will be handled.</li>
+            <li>Be aware that providers may be in different jurisdictions, affecting how your data is protected.</li>
+          </ul>
+
+          <div class="legal-info-box">
+            <h4>Example: Cross-border data</h4>
+            <p>If you're in Canada and your transaction is processed by a U.S.-based payment gateway, your information may be subject to U.S. laws like the Patriot Act. Once you leave our website or are redirected to a third-party site or app, this privacy policy no longer applies.</p>
+          </div>
+
+          <h3>Links</h3>
+          <p>Links may direct you away from our site. We encourage you to read the privacy statements of those sites.</p>
+
+          <h3>Google Analytics</h3>
+          <p>We use Google Analytics to learn about visitors and what pages they view.</p>
+        </section>
+
+        <section id="security">
+          <span class="legal-section-tag">Section 05</span>
+          <h2>Security</h2>
+          <p>To protect your personal information, we:</p>
+          <ul>
+            <li>Take reasonable precautions.</li>
+            <li>Follow industry best practices.</li>
+            <li>Use SSL and AES-256 encryption for sensitive data.</li>
+          </ul>
+          <p>No method of electronic transmission or storage is 100% secure, but we follow all PCI-DSS requirements and accepted industry standards.</p>
+        </section>
+
+        <section id="age">
+          <span class="legal-section-tag">Section 06</span>
+          <h2>Age of Consent</h2>
+          <p>By using this site, you confirm that:</p>
+          <ul>
+            <li>You are at least the age of majority in your jurisdiction.</li>
+            <li>You consent to allow any of your minor dependents to use the site (if applicable).</li>
+          </ul>
+        </section>
+
+        <section id="changes">
+          <span class="legal-section-tag">Section 07</span>
+          <h2>Changes to This Privacy Policy</h2>
+          <p>We reserve the right to modify this policy at any time. Changes take effect immediately upon posting. If our store is acquired or merged, your information may be transferred to new owners so we can continue to market to you.</p>
+          <p>Questions and contact information: To access, correct, amend, or delete your information — or to register a complaint — contact our privacy compliance officer at <a href="mailto:support@Mavrox.com">support@Mavrox.com</a>.</p>
+        </section>
+
+        <!-- ============ HIPAA NOTICE ============ -->
+        <section id="your-rights">
+          <span class="legal-section-tag">HIPAA Notice</span>
+          <h2>Your Information. Your Rights. Our Responsibilities.</h2>
+          <p>This notice describes how medical information about you may be used and disclosed and how you can get access to this information. Please review it carefully.</p>
+
+          <h3>Your Rights</h3>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Get a copy of your paper or electronic medical record.</li>
+            <li>Correct your paper or electronic medical record.</li>
+            <li>Request confidential communication.</li>
+            <li>Ask us to limit the information we disclose.</li>
+            <li>Get a list of those with whom we've disclosed your information.</li>
+            <li>Get a copy of this privacy notice.</li>
+            <li>Choose someone to act for you.</li>
+            <li>File a complaint if you believe your privacy rights have been violated.</li>
+          </ul>
+        </section>
+
+        <section id="your-choices">
+          <span class="legal-section-tag">HIPAA Notice</span>
+          <h2>Your Choices</h2>
+          <p>You have some choices in how we use and disclose your information:</p>
+          <ul>
+            <li>Tell family and friends about your condition.</li>
+            <li>Provide disaster relief.</li>
+            <li>Include you in a hospital directory.</li>
+            <li>Provide mental health care.</li>
+            <li>Market our services or share your information with third parties.</li>
+            <li>Raise funds.</li>
+          </ul>
+        </section>
+
+        <section id="our-uses">
+          <span class="legal-section-tag">HIPAA Notice</span>
+          <h2>Our Uses and Disclosures</h2>
+          <p>We may use and disclose your information to:</p>
+          <ul>
+            <li>Treat you.</li>
+            <li>Run our organization.</li>
+            <li>Bill for your services.</li>
+            <li>Help with public health and safety issues.</li>
+            <li>Conduct research.</li>
+            <li>Comply with the law.</li>
+            <li>Respond to organ and tissue donation requests.</li>
+            <li>Work with a medical examiner or funeral director.</li>
+            <li>Address workers' compensation, law enforcement, and other government requests.</li>
+            <li>Respond to lawsuits and legal actions.</li>
+          </ul>
+        </section>
+
+        <section id="additional-privacy">
+          <span class="legal-section-tag">HIPAA Notice</span>
+          <h2>Additional Privacy Options</h2>
+
+          <h3>Mobile Information</h3>
+          <p>We do not share mobile info with third parties or affiliates for marketing. Subcontractor sharing is allowed for support services. Text messaging originator data and consent is not shared.</p>
+
+          <h3>Public Health and Legal Exceptions</h3>
+          <p>We may disclose your health info to:</p>
+          <ul>
+            <li>Prevent disease.</li>
+            <li>Help with product recalls.</li>
+            <li>Report adverse reactions to medications.</li>
+            <li>Report abuse, neglect, or domestic violence.</li>
+            <li>Prevent or reduce serious health threats.</li>
+          </ul>
+
+          <h3>Other Allowable Disclosures</h3>
+          <ul>
+            <li>For research purposes.</li>
+            <li>If required by federal or state laws.</li>
+            <li>For organ donation facilitation.</li>
+            <li>To coroners, medical examiners, or funeral directors.</li>
+            <li>For workers' compensation, law enforcement, or special government functions.</li>
+            <li>In legal proceedings (court orders, subpoenas).</li>
+          </ul>
+        </section>
+
+        <section id="our-responsibilities">
+          <span class="legal-section-tag">HIPAA Notice</span>
+          <h2>Our Responsibilities</h2>
+          <p>We are required to:</p>
+          <ul>
+            <li>Maintain privacy and security of your protected health info.</li>
+            <li>Notify you promptly of any breach.</li>
+            <li>Follow the privacy practices outlined here.</li>
+            <li>Only use or disclose your info as described, unless you give written permission.</li>
+          </ul>
+          <p>For more info, visit <a href="https://www.hhs.gov/ocr/privacy/hipaa/understanding/consumers/noticepp.html" target="_blank" rel="noopener">www.hhs.gov/ocr/privacy/hipaa/understanding/consumers/noticepp.html</a>.</p>
+
+          <h3>Changes to This Notice</h3>
+          <p>We may change this notice at any time. New versions will apply to all existing information and be made available in our office and on our website.</p>
+        </section>
+
+        <!-- ============ TELEHEALTH ============ -->
+        <section id="telehealth-consent">
+          <span class="legal-section-tag">Telehealth</span>
+          <h2>Telehealth Informed Consent &amp; Disclosure</h2>
+          <p>I understand that Mavrox has arranged a telehealth consultation for me and an independent and duly licensed medical provider (the "Provider") utilizing its telehealth platform. There are two primary methods for such telehealth consultations:</p>
+
+          <p><strong>Asynchronous consultation.</strong> I may be able to conduct an asynchronous telehealth consultation, in which I will provide the requisite personal health information to my Provider in a digital format. Based on that health information, my Provider may be able to diagnose and prescribe treatment upon review of the information that I have provided. I acknowledge, however, that I may not be a good candidate for asynchronous consultations and that either the Provider or Mavrox may require that I engage in a live, interactive video consultation with the Provider prior to beginning any treatment.</p>
+
+          <p><strong>Live video consultation.</strong> If required to conduct — or if I choose to conduct — an interactive video consultation with my Provider, I will be able to consult with the Provider about my health and wellness concerns in real time via a live video connection through the Mavrox platform.</p>
+
+          <p>Mavrox has explained how telehealth will be used to do such consultation and how else we will use telehealth to connect with the Provider while working together, utilizing the telehealth platform.</p>
+
+          <h3>Potential Risks</h3>
+          <p>I understand there are potential risks with this technology:</p>
+          <ul>
+            <li>The video connection may not work or it may stop working during the consultation.</li>
+            <li>The video picture or information transmitted may not be clear enough to be useful for the consultation.</li>
+            <li>My personal health information may be misreported or inaccurately stored, making asynchronous or live video consultations difficult, inaccurate, or impossible. I acknowledge that I have an obligation to accurately and truthfully present my personal health information to Mavrox and the Provider, and that any treatment provided based on inaccurate information will be my sole responsibility and liability.</li>
+          </ul>
+
+          <h3>Benefits of Telehealth</h3>
+          <ul>
+            <li>I do not need to travel to the consult location.</li>
+            <li>I can meet with a provider quickly and efficiently.</li>
+            <li>I have access to a specialist Provider through this consultation.</li>
+          </ul>
+
+          <p>I also understand other individuals may need to use the telehealth platform and that they will take all reasonable and necessary steps to maintain confidentiality of the information I provide. I have read this document and understand the risk and benefits of the telehealth consultation, and have had my questions regarding the procedure explained. I hereby consent to participate in telehealth sessions under the conditions described in this document.</p>
+        </section>
+
+        <section id="telehealth-terms">
+          <span class="legal-section-tag">Telehealth</span>
+          <h2>Treatment Terms</h2>
+          <p>I have further read and agreed to the terms below in association with my telehealth sessions and treatment with and through my Provider and Mavrox.</p>
+
+          <h3>Accurate Information</h3>
+          <p>A member of my Provider team assessed my medical condition and made a clinical treatment determination, taking into account the information I provided. If I forgot to provide or incorrectly provided certain information related to my health, there is a possibility that the Provider may misdiagnose or fail to diagnose conditions that I may have, which could affect their recommendation for treatment. If I need to clarify or update any information about my health, I must message my Provider team through the Mavrox platform as soon as possible.</p>
+
+          <h3>Treatment Failure</h3>
+          <p>The treatments that I may be prescribed are not 100% effective for all patients. Any such treatment may not work or may only partially resolve the condition for which I am seeking treatment. Likewise, treatments may result in adverse side effects, varying in severity from mild to severe. If I do not see any signs of improvement or if I am experiencing new or worsening symptoms, I will message a Provider through the Mavrox platform, contact my regular healthcare provider, or go to an urgent care center as appropriate.</p>
+
+          <div class="legal-callout">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div class="legal-callout-content">
+              <p><strong>Emergency:</strong> If it is an emergency, you should call 911 or seek immediate help in person at your nearest hospital, clinic, or healthcare provider.</p>
+            </div>
+          </div>
+
+          <h3>Misdiagnosis or Delayed Diagnosis</h3>
+          <p>I acknowledge that there is a risk that the Provider may misdiagnose or fail to diagnose conditions that I may have, which could affect the recommendation for treatment. The healthcare Providers providing treatment through the Mavrox platform use evidence-based guidelines as well as clinical decision-making to try to minimize these risks.</p>
+
+          <h3>Accepting or Declining the Recommendation</h3>
+          <p>The Provider who recommended or may recommend this treatment for me did so with my consent and because the potential benefits outweigh the risks in their estimation, based on their clinical judgment, training, and experience. I should evaluate this information and any input from my in-person healthcare team, and any other relevant information, to decide if this treatment plan is appropriate for me. I understand that I am free to not follow the treatment recommendations I received from the Provider through the Mavrox platform.</p>
+
+          <h3>Share with My In-Person Healthcare Team</h3>
+          <p>I can request a copy of my health records anytime. Mavrox strongly recommends that I update my in-person healthcare team about any new medicines that I am taking or other changes in my health. I can also ask questions anytime by messaging a Provider through the Mavrox platform, who can help me share any information about my health with my in-person healthcare team.</p>
+
+          <h3>Following My Prescribed Treatment</h3>
+          <p>If I begin treatment through Mavrox at the direction of my Provider, I acknowledge and agree that I must follow the prescribed treatment plan from my Provider team and Mavrox. All prescription medication must be taken and used only as prescribed. If I do not follow my treatment plan precisely as prescribed and directed by the Provider team and/or Mavrox, Mavrox cannot and will not be liable for my care and may terminate my current and future treatment plan(s).</p>
+
+          <div class="legal-contact">
+            <span class="legal-section-tag">Questions or concerns?</span>
+            <h3>We're here to help.</h3>
+            <p>Contact our privacy compliance officer at <a href="mailto:support@Mavrox.com">support@Mavrox.com</a> to access, correct, amend, or delete your information — or to register a complaint.</p>
+          </div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="Logo/Mavrox.png" alt="MAVROX" />
+          <p class="footer-tagline">Provider-prescribed ED treatment for men who demand more. Discreet. Proven. Delivered.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Treatments</h4>
+          <ul>
+            <li><a href="performax.html">Performax</a></li>
+            <li><a href="tadalafix.html">Tadalafix</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Providers</a></li>
+            <li><a href="#">The Science</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Patient Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html">Terms of Service</a></li>
+            <li><a href="privacy-policy.html#your-rights">HIPAA Notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Mavrox Health, Inc. All rights reserved.</p>
+        <p class="footer-rx">Rx Only <span>&middot;</span> Compounded <span>&middot;</span> Not FDA-Approved</p>
+      </div>
+      <div class="footer-legal">
+        <p>IMPORTANT SAFETY INFORMATION: Mavrox treatments are prescription-only compounded medications and have not been evaluated or approved by the FDA as finished drug products. Compounded medications are prepared by a licensed compounding pharmacy pursuant to a valid prescription. Do not take if you use nitrates for chest pain, have low blood pressure, or have been advised against sexual activity. Do not exceed your prescribed dose. Consult your provider before starting any treatment. Results may vary. Individual results are not guaranteed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script>
+    // ===== HAMBURGER MENU =====
+    (function() {
+      var hamburger = document.getElementById('hamburger');
+      var navMobile = document.getElementById('navMobile');
+      if (!hamburger || !navMobile) return;
+      hamburger.addEventListener('click', function() {
+        var isOpen = navMobile.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        navMobile.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      });
+      navMobile.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navMobile.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          navMobile.setAttribute('aria-hidden', 'true');
+        });
+      });
+    })();
+
+    // ===== SMOOTH SCROLL with nav offset =====
+    (function() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href === '#') return;
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            var navH = document.getElementById('nav').offsetHeight;
+            window.scrollTo({
+              top: target.getBoundingClientRect().top + window.pageYOffset - navH - 16,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    })();
+
+    // ===== TOC SCROLLSPY =====
+    (function() {
+      var sections = document.querySelectorAll('.legal-content > section[id]');
+      var tocLinks = document.querySelectorAll('.legal-toc-list a');
+      if (!sections.length || !tocLinks.length) return;
+
+      function setActive(id) {
+        tocLinks.forEach(function(link) {
+          var match = link.getAttribute('href') === '#' + id;
+          link.classList.toggle('active', match);
+        });
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        // Pick the section closest to the top that is intersecting
+        var visible = entries
+          .filter(function(e) { return e.isIntersecting; })
+          .sort(function(a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+        if (visible.length) {
+          setActive(visible[0].target.id);
+        }
+      }, {
+        rootMargin: '-80px 0px -65% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(function(s) { observer.observe(s); });
+    })();
+
+    // ===== BACK TO TOP =====
+    (function() {
+      var btn = document.getElementById('backToTop');
+      if (!btn) return;
+      window.addEventListener('scroll', function() {
+        btn.classList.toggle('visible', window.pageYOffset > 600);
+      });
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+</body>
+</html>
