@@ -390,6 +390,51 @@
     }
     .legal-card-address span { display: block; color: var(--muted); }
 
+    /* ===================== LICENSURE TABLE ===================== */
+    .legal-table-wrapper {
+      background: var(--black);
+      border-radius: 14px;
+      margin: 1.5rem 0 0.85rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .legal-table {
+      width: 100%;
+      border-collapse: collapse;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.92rem;
+      min-width: 640px;
+    }
+    .legal-table thead th {
+      text-align: left;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      white-space: nowrap;
+    }
+    .legal-table tbody td {
+      padding: 1.1rem 1.5rem;
+      color: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      vertical-align: middle;
+      line-height: 1.5;
+    }
+    .legal-table tbody tr:last-child td { border-bottom: none; }
+    .legal-table tbody td:first-child { font-weight: 500; color: #fff; }
+    .legal-table-caption {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0 0 2rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .legal-table-caption a { color: var(--orange); }
+
     /* Contact card */
     .legal-contact {
       background: var(--black);
@@ -480,6 +525,11 @@
       .legal-callout { padding: 1.25rem; }
       .legal-info-box, .legal-contact, .legal-caps { padding: 1.25rem; }
 
+      .legal-table { font-size: 0.85rem; }
+      .legal-table thead th,
+      .legal-table tbody td { padding: 0.85rem 1rem; }
+      .legal-table thead th { font-size: 0.66rem; }
+
       .footer { padding: 3rem 1.25rem 1.5rem; }
       .footer-top { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.75rem; }
@@ -552,7 +602,7 @@
         <ul class="legal-toc-list">
           <li><a href="#introduction">Introduction</a></li>
           <li><a href="#state-compliance">State-Specific Compliance</a></li>
-          <li><a href="#service-areas">Service Areas</a></li>
+          <li><a href="#service-areas">Provider Licensure &amp; Availability</a></li>
         </ul>
 
         <div class="legal-toc-section">Using the Site</div>
@@ -626,38 +676,47 @@
 
         <section id="service-areas">
           <span class="legal-section-tag">Overview</span>
-          <h2>Service Areas</h2>
-          <p>We proudly serve patients in all 50 states through our licensed medical provider network.</p>
+          <h2>Provider Licensure and State Availability</h2>
+          <p>Mavrox facilitates telehealth consultations for patients located in the United States through a network of independent, state-licensed healthcare providers. All clinical determinations &mdash; including eligibility, prescribing, modality of care, and follow-up cadence &mdash; are made solely by the licensed Provider Group, not by Mavrox.</p>
+          <p>Service availability in any given state is contingent on a licensed Provider being credentialed to practice in that jurisdiction at the time of consultation. The following individual provider licensure disclosures are published in accordance with applicable state telehealth and consumer protection requirements:</p>
 
-          <div class="legal-card-grid">
-            <div class="legal-card">
-              <div class="legal-card-tag">Massachusetts</div>
-              <h4>Angelica McGough, APRN</h4>
-              <dl>
-                <dt>License #</dt><dd>RN2369078</dd>
-                <dt>Expires</dt><dd>03/23/2026</dd>
-                <dt>Company</dt><dd>WizDoc</dd>
-              </dl>
-            </div>
-            <div class="legal-card">
-              <div class="legal-card-tag">Rhode Island</div>
-              <h4>Angelica McGough, APRN</h4>
-              <dl>
-                <dt>License #</dt><dd>APRN04193</dd>
-                <dt>Expires</dt><dd>03/01/2028</dd>
-                <dt>Company</dt><dd>WizDoc</dd>
-              </dl>
-            </div>
-            <div class="legal-card">
-              <div class="legal-card-tag">Vermont</div>
-              <h4>Rhonda Rusch, APRN</h4>
-              <dl>
-                <dt>License #</dt><dd>101.0138672</dd>
-                <dt>Expires</dt><dd>03/31/2027</dd>
-                <dt>Company</dt><dd>WizDoc</dd>
-              </dl>
-            </div>
+          <div class="legal-table-wrapper" role="region" aria-label="Provider licensure disclosure table">
+            <table class="legal-table">
+              <thead>
+                <tr>
+                  <th scope="col">State</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">License #</th>
+                  <th scope="col">Expiration</th>
+                  <th scope="col">Company</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Massachusetts</td>
+                  <td>Angelica McGough, APRN</td>
+                  <td>RN2369078</td>
+                  <td>03/23/2026</td>
+                  <td>WizDoc</td>
+                </tr>
+                <tr>
+                  <td>Rhode Island</td>
+                  <td>Angelica McGough, APRN</td>
+                  <td>APRN04193</td>
+                  <td>03/01/2028</td>
+                  <td>WizDoc</td>
+                </tr>
+                <tr>
+                  <td>Vermont</td>
+                  <td>Rhonda Rusch, APRN</td>
+                  <td>101.0138672</td>
+                  <td>03/31/2027</td>
+                  <td>WizDoc</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <p class="legal-table-caption">Provider licensure information is reviewed and updated periodically. For questions regarding a specific provider's credentials, contact <a href="mailto:support@Mavrox.com">support@Mavrox.com</a>.</p>
         </section>
 
         <section id="ip">
@@ -695,7 +754,7 @@
           <p>By using our services, you expressly consent to receive communications containing your Personal Health Information ("PHI") via standard SMS text messaging or similar unencrypted messaging technologies (e.g., MMS), including but not limited to appointment reminders, prescription details, test results, or other health-related information.</p>
 
           <h3>Safeguards and Risk Acknowledgment</h3>
-          <p>We take reasonable administrative, technical, and physical precautions — and thoroughly vet our internal systems and those of our service providers — to protect your PHI and maintain compliance with applicable health and privacy laws, including the Health Insurance Portability and Accountability Act ("HIPAA") and similar state laws.</p>
+          <p>We take reasonable administrative, technical, and physical precautions &mdash; and thoroughly vet our internal systems and those of our service providers &mdash; to protect your PHI and maintain compliance with applicable health and privacy laws, including the Health Insurance Portability and Accountability Act ("HIPAA") and similar state laws.</p>
           <p>Nevertheless, standard SMS and similar technologies:</p>
           <ul>
             <li>May not be fully encrypted end-to-end during transmission or storage.</li>
@@ -705,13 +764,13 @@
           </ul>
 
           <h3>Regulatory Compliance and Alternatives</h3>
-          <p>Under HIPAA, you have the right to request confidential communications via alternative, more secure methods, such as your encrypted patient portal. If such a request is reasonable, we will accommodate it — but first, you must acknowledge these risks and affirm your continued consent to SMS-based PHI communication.</p>
+          <p>Under HIPAA, you have the right to request confidential communications via alternative, more secure methods, such as your encrypted patient portal. If such a request is reasonable, we will accommodate it &mdash; but first, you must acknowledge these risks and affirm your continued consent to SMS-based PHI communication.</p>
 
           <h3>State-Specific Privacy Considerations</h3>
-          <p><strong>California:</strong> Under the Confidentiality of Medical Information Act (CMIA), a Provider must obtain explicit patient consent before electronically disclosing medical information — this clause serves as that consent.</p>
+          <p><strong>California:</strong> Under the Confidentiality of Medical Information Act (CMIA), a Provider must obtain explicit patient consent before electronically disclosing medical information &mdash; this clause serves as that consent.</p>
 
           <h3>Opt-Out / Revocation of Consent</h3>
-          <p>You may withdraw your consent to receive PHI via SMS at any time by notifying us through the secure messaging portal or by contacting our support team. Your request will be honored prospectively — but communications already sent via SMS prior to your revocation remain authorized.</p>
+          <p>You may withdraw your consent to receive PHI via SMS at any time by notifying us through the secure messaging portal or by contacting our support team. Your request will be honored prospectively &mdash; but communications already sent via SMS prior to your revocation remain authorized.</p>
 
           <h3>Documentation</h3>
           <p>Your continued use of our services after receiving this disclosure constitutes consent, which we will document and retain as required by HIPAA.</p>
@@ -774,7 +833,7 @@
             <li>Access to prescribed medication (subject to Provider evaluation and approval).</li>
             <li>Access to scheduling visits with independent licensed healthcare providers, as medically appropriate and determined solely by the Provider Group.</li>
             <li>Access to text-based health coaching and community resources.</li>
-            <li>Access to LillyDirect and NovoCare for brand-name medications (e.g., Wegovy® and Zepbound® in connection with Provider approval).</li>
+            <li>Access to LillyDirect and NovoCare for brand-name medications (e.g., Wegovy&reg; and Zepbound&reg; in connection with Provider approval).</li>
           </ul>
 
           <div class="legal-callout">
@@ -783,7 +842,7 @@
               <p><strong>Please be advised:</strong></p>
               <p>The membership fee is separate from the cost of medication. Mavrox does not dispense or sell medication directly. Members are responsible for purchasing approved prescriptions directly through LillyDirect or NovoCare.</p>
               <p>Membership fees are non-refundable once a patient has been approved for treatment. If you are not approved for treatment by a licensed Provider, your membership fee will be refunded.</p>
-              <p>Any clinical requirements described in connection with a membership program — such as follow-up visits, clinical check-ins, or medication monitoring — represent requirements set by the Provider Group and not by Mavrox.</p>
+              <p>Any clinical requirements described in connection with a membership program &mdash; such as follow-up visits, clinical check-ins, or medication monitoring &mdash; represent requirements set by the Provider Group and not by Mavrox.</p>
             </div>
           </div>
 
@@ -860,11 +919,11 @@
         <section id="guarantee">
           <span class="legal-section-tag">Guarantee &amp; Refunds</span>
           <h2>Mavrox Money Back Guarantee</h2>
-          <p>Mavrox offers a money back guarantee. You may be eligible for a refund or program credit if you fully comply with all program requirements and do not achieve at least a 10% reduction in your baseline body weight within nine months. Full compliance with the program requirements — such as regular check-ins, proper use of medication, and adherence to lifestyle and coaching recommendations — is necessary to qualify for this guarantee.</p>
+          <p>Mavrox offers a money back guarantee. You may be eligible for a refund or program credit if you fully comply with all program requirements and do not achieve at least a 10% reduction in your baseline body weight within nine months. Full compliance with the program requirements &mdash; such as regular check-ins, proper use of medication, and adherence to lifestyle and coaching recommendations &mdash; is necessary to qualify for this guarantee.</p>
           <p>By participating in the program, you agree to these terms and conditions and acknowledge that adherence to the program and accurate reporting are essential for eligibility.</p>
           <p>Please note that participation is subject to change at any time. We reserve the right to cancel the program or update these terms at our discretion, with changes applying to all future requests or claims.</p>
           <p>Participation in any medication-based weight-loss program requires medical evaluation and ongoing oversight by the Provider Group. All determinations regarding eligibility, medication appropriateness, dosing, titration, continuation of therapy, or discontinuation are made exclusively by the Providers. Mavrox does not control or influence these medical decisions.</p>
-          <p>The administrative requirements listed in this program — including logging activity, engaging with coaching resources, completing educational modules, and timely participation in the Mavrox platform — are membership obligations and do not constitute medical advice.</p>
+          <p>The administrative requirements listed in this program &mdash; including logging activity, engaging with coaching resources, completing educational modules, and timely participation in the Mavrox platform &mdash; are membership obligations and do not constitute medical advice.</p>
 
           <h3>Who Qualifies for the Guarantee?</h3>
           <ul>
@@ -1009,13 +1068,13 @@
             </div>
           </div>
 
-          <p>Medications, including brand-name drugs such as Wegovy® and Zepbound®, may be purchased directly by Members through third-party pharmacies, including LillyDirect or NovoCare, after Provider approval.</p>
+          <p>Medications, including brand-name drugs such as Wegovy&reg; and Zepbound&reg;, may be purchased directly by Members through third-party pharmacies, including LillyDirect or NovoCare, after Provider approval.</p>
           <p>Mavrox's role is limited to facilitating access to Providers and coordinating communication between Members, Providers, and pharmacies. Mavrox does not receive compensation from pharmacies based on prescription volume or medication sales.</p>
           <p>Due to availability or supply chain-related conditions which may not be foreseeable or predictable, Mavrox's network of pharmacy partners may not be able to procure and provide to you brand-name medications. In that event, Mavrox will work with you to explore other fulfillment options, if available.</p>
           <p>You agree and understand that your prescription(s) may be filled by and transferred between any of Mavrox's pharmacy partners and you agree that your Provider and/or Mavrox may take these actions on your behalf. Mavrox does not control or interfere with any professional service provided by its pharmacy partners, and each is solely responsible for their provision of professional services rendered to you.</p>
           <p>Likewise, Mavrox makes no representations or guarantees regarding any medication or other product's place of origin. Medications and other products may be shipped to you directly from sources other than within the United States, including without limitation the United Kingdom, Canada, and other locations.</p>
-          <p>Medication availability is subject to clinical approval, pharmacy inventory, supply chain constraints, and regulatory requirements. Mavrox does not guarantee that any medication — including GLP-1 medications — will be available, and Mavrox does not influence the Provider Group's decision to initiate, continue, or discontinue any medication.</p>
-          <p>By accepting this Agreement, you acknowledge and agree that any services you receive from Mavrox's pharmacy partners and your healthcare Providers through the Site or otherwise are also subject to this Agreement, and that Mavrox's affiliates in providing Services to you — including without limitation its affiliated pharmacies, healthcare providers, labs, shipping companies, and others — are third-party beneficiaries of this Agreement.</p>
+          <p>Medication availability is subject to clinical approval, pharmacy inventory, supply chain constraints, and regulatory requirements. Mavrox does not guarantee that any medication &mdash; including GLP-1 medications &mdash; will be available, and Mavrox does not influence the Provider Group's decision to initiate, continue, or discontinue any medication.</p>
+          <p>By accepting this Agreement, you acknowledge and agree that any services you receive from Mavrox's pharmacy partners and your healthcare Providers through the Site or otherwise are also subject to this Agreement, and that Mavrox's affiliates in providing Services to you &mdash; including without limitation its affiliated pharmacies, healthcare providers, labs, shipping companies, and others &mdash; are third-party beneficiaries of this Agreement.</p>
         </section>
 
         <section id="pharmacy-partners">
