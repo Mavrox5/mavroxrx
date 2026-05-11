@@ -390,70 +390,54 @@
     }
     .legal-card-address span { display: block; color: var(--muted); }
 
-    /* ===================== LICENSURE TABLE ===================== */
-    .legal-table-wrapper {
-      background: var(--black);
-      border-radius: 14px;
-      margin: 1.5rem 0 0.85rem;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    .legal-table {
-      width: 100%;
-      border-collapse: collapse;
-      color: rgba(255,255,255,0.9);
-      font-size: 0.92rem;
-      min-width: 640px;
-    }
-    .legal-table thead th {
-      text-align: left;
-      font-family: 'Barlow', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      padding: 1.25rem 1.5rem 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      white-space: nowrap;
-    }
-    .legal-table tbody td {
-      padding: 1.1rem 1.5rem;
-      color: rgba(255,255,255,0.88);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      vertical-align: middle;
-      line-height: 1.5;
-    }
-    .legal-table tbody tr:last-child td { border-bottom: none; }
-    .legal-table tbody td:first-child { font-weight: 500; color: #fff; }
-    .legal-table-caption {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin: 0 0 2rem;
-      font-style: italic;
-      line-height: 1.6;
-    }
-    .legal-table-caption a { color: var(--orange); }
-
-    /* Contact card */
-    .legal-contact {
-      background: var(--black);
-      color: #fff;
-      border-radius: 18px;
-      padding: 2rem 2.25rem;
-      margin: 2rem 0;
-    }
-    .legal-contact .legal-section-tag { color: rgba(255,255,255,0.5); }
-    .legal-contact h3 {
-      color: #fff; margin-top: 0;
-      font-size: 1.75rem; margin-bottom: 0.85rem;
-    }
-    .legal-contact p { color: rgba(255,255,255,0.65); font-size: 0.95rem; }
-    .legal-contact p strong { color: #fff; }
-    .legal-contact a {
-      color: var(--orange2);
-      border-bottom: 1px solid rgba(224,94,40,0.4);
-    }
+   /* ===================== LICENSURE TABLE ===================== */
+.legal-table-wrapper {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin: 1.5rem 0 0.85rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+  font-size: 0.92rem;
+  min-width: 640px;
+}
+.legal-table thead th {
+  text-align: left;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  background: var(--bg2);
+}
+.legal-table thead th:first-child { border-top-left-radius: 14px; }
+.legal-table thead th:last-child { border-top-right-radius: 14px; }
+.legal-table tbody td {
+  padding: 1.1rem 1.5rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  line-height: 1.5;
+}
+.legal-table tbody tr:last-child td { border-bottom: none; }
+.legal-table tbody td:first-child { font-weight: 600; }
+.legal-table-caption {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0 0 2rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+.legal-table-caption a { color: var(--orange); }
 
     /* ===================== FOOTER ===================== */
     .footer { background: var(--black); padding: 4rem 2.5rem 2rem; border-top: 1px solid rgba(255,255,255,0.06); }
